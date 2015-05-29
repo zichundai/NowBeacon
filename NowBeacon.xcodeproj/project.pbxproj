@@ -15,6 +15,8 @@
 		566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */; };
 		566C6F4D1B16F86100EDC546 /* NowBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */; };
 		567D89F31B18672900AABC00 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F21B18672900AABC00 /* DetailViewController.m */; };
+		567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */; };
+		567D89F81B18B0E400AABC00 /* map.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 567D89F71B18B0E400AABC00 /* map.jpg */; };
 		569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569488FC1B1762A9002C8B3D /* MoreViewController.m */; };
 		569489081B177121002C8B3D /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489051B177121002C8B3D /* notepad.png */; };
 		569489091B177121002C8B3D /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489061B177121002C8B3D /* phone.png */; };
@@ -62,6 +64,9 @@
 		566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NowBeaconTests.m; sourceTree = "<group>"; };
 		567D89F11B18672900AABC00 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		567D89F21B18672900AABC00 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		567D89F71B18B0E400AABC00 /* map.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = map.jpg; path = NowBeacon/icons/map.jpg; sourceTree = "<group>"; };
 		569488FB1B1762A9002C8B3D /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		569488FC1B1762A9002C8B3D /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		569489051B177121002C8B3D /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notepad.png; path = NowBeacon/icons/notepad.png; sourceTree = "<group>"; };
@@ -140,6 +145,8 @@
 				566C6F351B16F86100EDC546 /* FirstViewController.m */,
 				569488FB1B1762A9002C8B3D /* MoreViewController.h */,
 				569488FC1B1762A9002C8B3D /* MoreViewController.m */,
+				567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */,
+				567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */,
 				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
 				567D89F11B18672900AABC00 /* DetailViewController.h */,
 				567D89F21B18672900AABC00 /* DetailViewController.m */,
@@ -179,6 +186,7 @@
 		569488FE1B1770A7002C8B3D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				567D89F71B18B0E400AABC00 /* map.jpg */,
 				56C049731B185F28008591B8 /* 4.png */,
 				56C049741B185F28008591B8 /* 5.png */,
 				56C049751B185F28008591B8 /* 6.png */,
@@ -291,6 +299,7 @@
 				56C049841B185F28008591B8 /* 10.png in Resources */,
 				5694890A1B177121002C8B3D /* microphone.png in Resources */,
 				56C049831B185F28008591B8 /* 1.png in Resources */,
+				567D89F81B18B0E400AABC00 /* map.jpg in Resources */,
 				56C049801B185F28008591B8 /* 7.png in Resources */,
 				56C0497F1B185F28008591B8 /* 6.png in Resources */,
 				56C049821B185F28008591B8 /* 9.png in Resources */,
@@ -318,6 +327,7 @@
 				567D89F31B18672900AABC00 /* DetailViewController.m in Sources */,
 				56C0496E1B18530C008591B8 /* XBeacon.m in Sources */,
 				56C049721B18547C008591B8 /* BLEInfo.m in Sources */,
+				567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */,
 				566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */,
 				566C6F301B16F86100EDC546 /* main.m in Sources */,
 				569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */,

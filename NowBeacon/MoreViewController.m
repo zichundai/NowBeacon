@@ -7,6 +7,7 @@
 //
 
 #import "MoreViewController.h"
+#import "ContactUsViewController.h"
 
 @interface MoreViewController ()
 
@@ -113,5 +114,20 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.frame.size.height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 2:
+        {
+            ContactUsViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"contactuscontroller"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 @end
