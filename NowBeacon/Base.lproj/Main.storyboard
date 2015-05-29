@@ -46,15 +46,25 @@
                                 <color key="textColor" red="0.2044559447" green="0.50583964650000002" blue="0.50215738210000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="    NowBeacon Link是一款专业的iBeacon配置管理应用，可以实时雷达式扫描周围的iBeacon设备，能够进行单个和批量设备的配置管理工作，拥有绝佳的用户体验和人性化的操作界面。" translatesAutoresizingMaskIntoConstraints="NO" id="8lH-Ji-c1p">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="    NowBeacon Link是一款专业的iBeacon配置管理应用，可以实时雷达式扫描周围的iBeacon设备，能够进行单个和批量设备的配置管理工作，拥有绝佳的用户体验和人性化的操作界面。" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lH-Ji-c1p">
                                 <rect key="frame" x="16" y="114" width="568" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="9hN-uy-u30"/>
+                                    <constraint firstAttribute="height" constant="90" id="ape-2O-hhs"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ape-2O-hhs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="ape-2O-hhs"/>
+                                    </mask>
+                                </variation>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VbU-FV-OSz">
                                 <rect key="frame" x="16" y="204" width="568" height="300"/>
@@ -118,10 +128,20 @@
                             <constraint firstItem="8lH-Ji-c1p" firstAttribute="top" secondItem="RIu-Sl-jWZ" secondAttribute="bottom" constant="4" id="BQH-kI-hzv"/>
                             <constraint firstAttribute="centerX" secondItem="RIu-Sl-jWZ" secondAttribute="centerX" id="CLz-73-Rxv"/>
                             <constraint firstItem="RIu-Sl-jWZ" firstAttribute="top" secondItem="Uy5-Wu-gfG" secondAttribute="bottom" constant="25" id="DYZ-XR-8NW"/>
-                            <constraint firstItem="8lH-Ji-c1p" firstAttribute="trailing" secondItem="AKf-yl-0ui" secondAttribute="trailingMargin" id="FAW-lL-Ytd"/>
                             <constraint firstItem="8lH-Ji-c1p" firstAttribute="leading" secondItem="VbU-FV-OSz" secondAttribute="leading" id="IN5-z6-sQ5"/>
+                            <constraint firstItem="8lH-Ji-c1p" firstAttribute="trailing" secondItem="AKf-yl-0ui" secondAttribute="trailingMargin" id="s38-53-hNb"/>
                             <constraint firstItem="8lH-Ji-c1p" firstAttribute="trailing" secondItem="VbU-FV-OSz" secondAttribute="trailing" id="yVW-JN-VRW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="s38-53-hNb"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="s38-53-hNb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="更多" image="more" id="zzc-yr-EfI"/>
                     <navigationItem key="navigationItem" title="更多" id="LiW-uY-iwt"/>
