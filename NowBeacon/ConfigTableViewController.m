@@ -10,6 +10,7 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "XBeacon.h"
 #import "BLEInfo.h"
+#import "DetailViewController.h"
 
 @interface ConfigTableViewController ()<CBCentralManagerDelegate>
 @property (strong, nonatomic) CBCentralManager      *centralManager;
@@ -156,9 +157,6 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"信号强度: %@ dbm", beacon.rssi];
         int index = (indexPath.row%10+1);
         cell.imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:index]];
-        //cell.LableTitle.text = beacon.discoveredPeripheral.name;
-        //cell.LableDetail1.text = [NSString stringWithFormat:@"UUID: %@", beacon.discoveredPeripheral.identifier.UUIDString];
-        //cell.LableDetail2.text = [NSString stringWithFormat:@"RSSI: %@ dbm", beacon.rssi];
     }
 
     
@@ -174,16 +172,15 @@
 {
     // Don't keep the table selection.
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
-    CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
-    if(disPeripheral){
-        /*
-        BeaconDetailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detailcontroller"];
-        viewController.connectedPeripheral = disPeripheral;
+    //BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
+    //CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
+    //if(disPeripheral){
+        
+        DetailViewController *viewController = [self.storyboard     instantiateViewControllerWithIdentifier:@"detailcontroller"];
+        //viewController.connectedPeripheral = disPeripheral;
         [self.navigationController pushViewController:viewController animated:YES];
-         */
-        [self.centralManager stopScan];
-    }
+        //[self.centralManager stopScan];
+    //}
 }
 
 

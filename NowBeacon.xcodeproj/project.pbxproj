@@ -14,6 +14,7 @@
 		566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3D1B16F86100EDC546 /* Images.xcassets */; };
 		566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */; };
 		566C6F4D1B16F86100EDC546 /* NowBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */; };
+		567D89F31B18672900AABC00 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F21B18672900AABC00 /* DetailViewController.m */; };
 		569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569488FC1B1762A9002C8B3D /* MoreViewController.m */; };
 		569489081B177121002C8B3D /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489051B177121002C8B3D /* notepad.png */; };
 		569489091B177121002C8B3D /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489061B177121002C8B3D /* phone.png */; };
@@ -59,6 +60,8 @@
 		566C6F461B16F86100EDC546 /* NowBeaconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NowBeaconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566C6F4B1B16F86100EDC546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NowBeaconTests.m; sourceTree = "<group>"; };
+		567D89F11B18672900AABC00 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		567D89F21B18672900AABC00 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		569488FB1B1762A9002C8B3D /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		569488FC1B1762A9002C8B3D /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		569489051B177121002C8B3D /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notepad.png; path = NowBeacon/icons/notepad.png; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				569488FB1B1762A9002C8B3D /* MoreViewController.h */,
 				569488FC1B1762A9002C8B3D /* MoreViewController.m */,
 				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
+				567D89F11B18672900AABC00 /* DetailViewController.h */,
+				567D89F21B18672900AABC00 /* DetailViewController.m */,
 				566C6F3D1B16F86100EDC546 /* Images.xcassets */,
 				566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */,
 				566C6F2D1B16F86100EDC546 /* Supporting Files */,
@@ -310,6 +315,7 @@
 			files = (
 				566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */,
 				56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */,
+				567D89F31B18672900AABC00 /* DetailViewController.m in Sources */,
 				56C0496E1B18530C008591B8 /* XBeacon.m in Sources */,
 				56C049721B18547C008591B8 /* BLEInfo.m in Sources */,
 				566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */,
