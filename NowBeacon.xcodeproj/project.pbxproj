@@ -10,7 +10,6 @@
 		566C6F301B16F86100EDC546 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F2F1B16F86100EDC546 /* main.m */; };
 		566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F321B16F86100EDC546 /* AppDelegate.m */; };
 		566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F351B16F86100EDC546 /* FirstViewController.m */; };
-		566C6F391B16F86100EDC546 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F381B16F86100EDC546 /* SecondViewController.m */; };
 		566C6F3C1B16F86100EDC546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3A1B16F86100EDC546 /* Main.storyboard */; };
 		566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3D1B16F86100EDC546 /* Images.xcassets */; };
 		566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */; };
@@ -19,6 +18,8 @@
 		569489081B177121002C8B3D /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489051B177121002C8B3D /* notepad.png */; };
 		569489091B177121002C8B3D /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489061B177121002C8B3D /* phone.png */; };
 		5694890A1B177121002C8B3D /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489071B177121002C8B3D /* microphone.png */; };
+		56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C049661B181AD4008591B8 /* ConfigTableViewController.m */; };
+		56C049691B181C2C008591B8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C049681B181C2C008591B8 /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		566C6F321B16F86100EDC546 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		566C6F341B16F86100EDC546 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		566C6F351B16F86100EDC546 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		566C6F371B16F86100EDC546 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		566C6F381B16F86100EDC546 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		566C6F3B1B16F86100EDC546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		566C6F3D1B16F86100EDC546 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		566C6F401B16F86100EDC546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -52,6 +51,9 @@
 		569489051B177121002C8B3D /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notepad.png; path = NowBeacon/icons/notepad.png; sourceTree = "<group>"; };
 		569489061B177121002C8B3D /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = NowBeacon/icons/phone.png; sourceTree = "<group>"; };
 		569489071B177121002C8B3D /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphone.png; path = NowBeacon/icons/microphone.png; sourceTree = "<group>"; };
+		56C049651B181AD4008591B8 /* ConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigTableViewController.h; sourceTree = "<group>"; };
+		56C049661B181AD4008591B8 /* ConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTableViewController.m; sourceTree = "<group>"; };
+		56C049681B181C2C008591B8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = NowBeacon/icons/background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,14 +96,14 @@
 		566C6F2C1B16F86100EDC546 /* NowBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				56C049651B181AD4008591B8 /* ConfigTableViewController.h */,
+				56C049661B181AD4008591B8 /* ConfigTableViewController.m */,
 				566C6F311B16F86100EDC546 /* AppDelegate.h */,
 				566C6F321B16F86100EDC546 /* AppDelegate.m */,
 				566C6F341B16F86100EDC546 /* FirstViewController.h */,
 				566C6F351B16F86100EDC546 /* FirstViewController.m */,
 				569488FB1B1762A9002C8B3D /* MoreViewController.h */,
 				569488FC1B1762A9002C8B3D /* MoreViewController.m */,
-				566C6F371B16F86100EDC546 /* SecondViewController.h */,
-				566C6F381B16F86100EDC546 /* SecondViewController.m */,
 				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
 				566C6F3D1B16F86100EDC546 /* Images.xcassets */,
 				566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */,
@@ -139,6 +141,7 @@
 		569488FE1B1770A7002C8B3D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				56C049681B181C2C008591B8 /* background.png */,
 				569489051B177121002C8B3D /* notepad.png */,
 				569489061B177121002C8B3D /* phone.png */,
 				569489071B177121002C8B3D /* microphone.png */,
@@ -228,6 +231,7 @@
 			files = (
 				566C6F3C1B16F86100EDC546 /* Main.storyboard in Resources */,
 				569489081B177121002C8B3D /* notepad.png in Resources */,
+				56C049691B181C2C008591B8 /* background.png in Resources */,
 				569489091B177121002C8B3D /* phone.png in Resources */,
 				5694890A1B177121002C8B3D /* microphone.png in Resources */,
 				566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */,
@@ -249,8 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566C6F391B16F86100EDC546 /* SecondViewController.m in Sources */,
 				566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */,
+				56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */,
 				566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */,
 				566C6F301B16F86100EDC546 /* main.m in Sources */,
 				569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */,
