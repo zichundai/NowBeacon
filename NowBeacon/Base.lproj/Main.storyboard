@@ -193,7 +193,7 @@
         <scene sceneID="uGi-Hf-5bG">
             <objects>
                 <tableViewController id="dcg-6e-rMI" customClass="ConfigTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H5P-YF-GaE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellReuseID" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H5P-YF-GaE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,6 +214,9 @@
                     <navigationItem key="navigationItem" title="配置" id="diV-yb-NkA">
                         <barButtonItem key="rightBarButtonItem" title="批量配置" id="zgq-E9-dSh"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="configTableView" destination="H5P-YF-GaE" id="QVb-hU-nsv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I9-t9-U9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

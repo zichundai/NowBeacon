@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfigTableViewController : UITableViewController
+{
+    NSArray *imageArray;
+}
+@property (strong, nonatomic) IBOutlet UITableView *configTableView;
 
 @end
