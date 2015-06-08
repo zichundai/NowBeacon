@@ -12,6 +12,8 @@
 #import "BLEInfo.h"
 #import "DetailViewController.h"
 
+#define BEACON_NAME @"NowBeacon"
+
 @interface ConfigTableViewController ()<CBCentralManagerDelegate>
 @property (strong, nonatomic) CBCentralManager      *centralManager;
 @property (strong, nonatomic) CBPeripheral          *discoveredPeripheral;
@@ -172,15 +174,18 @@
 {
     // Don't keep the table selection.
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
-    //CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
-    //if(disPeripheral){
+    BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
+    if (![beacon.discoveredPeripheral.name  isEqual: BEACON_NAME]){
+        return;
+    }
+    CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
+    if(disPeripheral){
         
         DetailViewController *viewController = [self.storyboard     instantiateViewControllerWithIdentifier:@"detailcontroller"];
-        //viewController.connectedPeripheral = disPeripheral;
+        viewController.connectedPeripheral = disPeripheral;
         [self.navigationController pushViewController:viewController animated:YES];
-        //[self.centralManager stopScan];
-    //}
+        [self.centralManager stopScan];
+    }
 }
 
 
