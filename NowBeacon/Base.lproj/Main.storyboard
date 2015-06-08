@@ -188,10 +188,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ybe-DQ-5iv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.png" translatesAutoresizingMaskIntoConstraints="NO" id="ybe-DQ-5iv">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京NowBeacon科技有限公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfs-QB-gfe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京万象新动移动科技有限公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfs-QB-gfe">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="UfE-Zc-AGi"/>
@@ -213,7 +213,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话：400-123-4567" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-O0-Ai3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话：010-51085085" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs7-O0-Ai3">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cdD-No-YPe"/>
@@ -232,7 +232,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="传真：010-12345678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-hf-AL1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ：6108065" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-hf-AL1">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="345" id="Sf1-8u-F5o"/>
@@ -254,13 +254,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emai: daijian@nowbeacon.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqp-HI-6i7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emai: yipingchuan@nowbeacon.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqp-HI-6i7">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司网址：www.nowbeacon.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIE-yu-55Y">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公司网址：www.ixindong.cn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIE-yu-55Y">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="JqU-XJ-41R"/>
@@ -282,7 +282,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮编：100000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbR-el-gWy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮编：100020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbR-el-gWy">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="Ifr-1J-AgW"/>
@@ -832,43 +832,43 @@
                                 <exclude reference="act-11-cK7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="y5l-T6-3dD"/>
-                                <exclude reference="5K4-0R-2mw"/>
-                                <exclude reference="Mxc-76-wZD"/>
-                                <exclude reference="l8W-c4-FHE"/>
                                 <exclude reference="ACy-xe-13A"/>
                                 <exclude reference="Ta0-wU-oUV"/>
-                                <exclude reference="7K2-OU-4ZM"/>
-                                <exclude reference="HiA-cU-S9j"/>
-                                <exclude reference="Uja-wi-KAS"/>
                                 <exclude reference="5Ph-zW-tS7"/>
                                 <exclude reference="ZMm-2C-9bI"/>
                                 <exclude reference="hFQ-7A-e1B"/>
-                                <exclude reference="FUd-tC-DPI"/>
-                                <exclude reference="HmO-y9-4lH"/>
-                                <exclude reference="ONl-MK-eHd"/>
-                                <exclude reference="RV8-8d-JoZ"/>
                                 <exclude reference="RSO-sJ-hOF"/>
                                 <exclude reference="Wrz-88-Cr1"/>
                                 <exclude reference="pvM-CX-98G"/>
-                                <exclude reference="3XY-gL-W05"/>
-                                <exclude reference="TS4-Xs-8g1"/>
                                 <exclude reference="MDe-wO-Rwk"/>
                                 <exclude reference="tDY-No-h0V"/>
                                 <exclude reference="wpn-NS-vLB"/>
-                                <exclude reference="Pmi-IL-Miy"/>
-                                <exclude reference="UtD-1u-WKO"/>
-                                <exclude reference="bdy-zD-nkx"/>
-                                <exclude reference="kML-Wq-SNs"/>
-                                <exclude reference="6By-Qf-a1l"/>
-                                <exclude reference="Zzh-Ut-aiO"/>
-                                <exclude reference="Ose-Wm-j49"/>
-                                <exclude reference="QQ6-5f-NjB"/>
-                                <exclude reference="kob-Va-fcc"/>
                                 <exclude reference="6wX-VM-2Pv"/>
                                 <exclude reference="NwN-Gz-lbm"/>
                                 <exclude reference="Q2P-LX-5mB"/>
                                 <exclude reference="uT2-Ls-gg9"/>
+                                <exclude reference="Ose-Wm-j49"/>
+                                <exclude reference="QQ6-5f-NjB"/>
+                                <exclude reference="kob-Va-fcc"/>
+                                <exclude reference="bdy-zD-nkx"/>
+                                <exclude reference="kML-Wq-SNs"/>
+                                <exclude reference="y5l-T6-3dD"/>
+                                <exclude reference="5K4-0R-2mw"/>
+                                <exclude reference="Mxc-76-wZD"/>
+                                <exclude reference="l8W-c4-FHE"/>
+                                <exclude reference="7K2-OU-4ZM"/>
+                                <exclude reference="HiA-cU-S9j"/>
+                                <exclude reference="Uja-wi-KAS"/>
+                                <exclude reference="FUd-tC-DPI"/>
+                                <exclude reference="HmO-y9-4lH"/>
+                                <exclude reference="ONl-MK-eHd"/>
+                                <exclude reference="RV8-8d-JoZ"/>
+                                <exclude reference="3XY-gL-W05"/>
+                                <exclude reference="TS4-Xs-8g1"/>
+                                <exclude reference="Pmi-IL-Miy"/>
+                                <exclude reference="UtD-1u-WKO"/>
+                                <exclude reference="6By-Qf-a1l"/>
+                                <exclude reference="Zzh-Ut-aiO"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -883,43 +883,43 @@
                                 <include reference="act-11-cK7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="y5l-T6-3dD"/>
-                                <include reference="5K4-0R-2mw"/>
-                                <include reference="Mxc-76-wZD"/>
-                                <include reference="l8W-c4-FHE"/>
                                 <include reference="ACy-xe-13A"/>
                                 <include reference="Ta0-wU-oUV"/>
-                                <include reference="7K2-OU-4ZM"/>
-                                <include reference="HiA-cU-S9j"/>
-                                <include reference="Uja-wi-KAS"/>
                                 <include reference="5Ph-zW-tS7"/>
                                 <include reference="ZMm-2C-9bI"/>
                                 <include reference="hFQ-7A-e1B"/>
-                                <include reference="FUd-tC-DPI"/>
-                                <include reference="HmO-y9-4lH"/>
-                                <include reference="ONl-MK-eHd"/>
-                                <include reference="RV8-8d-JoZ"/>
                                 <include reference="RSO-sJ-hOF"/>
                                 <include reference="Wrz-88-Cr1"/>
                                 <include reference="pvM-CX-98G"/>
-                                <include reference="3XY-gL-W05"/>
-                                <include reference="TS4-Xs-8g1"/>
                                 <include reference="MDe-wO-Rwk"/>
                                 <include reference="tDY-No-h0V"/>
                                 <include reference="wpn-NS-vLB"/>
-                                <include reference="Pmi-IL-Miy"/>
-                                <include reference="UtD-1u-WKO"/>
-                                <include reference="bdy-zD-nkx"/>
-                                <include reference="kML-Wq-SNs"/>
-                                <include reference="6By-Qf-a1l"/>
-                                <include reference="Zzh-Ut-aiO"/>
-                                <include reference="Ose-Wm-j49"/>
-                                <include reference="QQ6-5f-NjB"/>
-                                <include reference="kob-Va-fcc"/>
                                 <include reference="6wX-VM-2Pv"/>
                                 <include reference="NwN-Gz-lbm"/>
                                 <include reference="Q2P-LX-5mB"/>
                                 <include reference="uT2-Ls-gg9"/>
+                                <include reference="Ose-Wm-j49"/>
+                                <include reference="QQ6-5f-NjB"/>
+                                <include reference="kob-Va-fcc"/>
+                                <include reference="bdy-zD-nkx"/>
+                                <include reference="kML-Wq-SNs"/>
+                                <include reference="y5l-T6-3dD"/>
+                                <include reference="5K4-0R-2mw"/>
+                                <include reference="Mxc-76-wZD"/>
+                                <include reference="l8W-c4-FHE"/>
+                                <include reference="7K2-OU-4ZM"/>
+                                <include reference="HiA-cU-S9j"/>
+                                <include reference="Uja-wi-KAS"/>
+                                <include reference="FUd-tC-DPI"/>
+                                <include reference="HmO-y9-4lH"/>
+                                <include reference="ONl-MK-eHd"/>
+                                <include reference="RV8-8d-JoZ"/>
+                                <include reference="3XY-gL-W05"/>
+                                <include reference="TS4-Xs-8g1"/>
+                                <include reference="Pmi-IL-Miy"/>
+                                <include reference="UtD-1u-WKO"/>
+                                <include reference="6By-Qf-a1l"/>
+                                <include reference="Zzh-Ut-aiO"/>
                             </mask>
                         </variation>
                         <connections>
@@ -1014,7 +1014,7 @@
     <resources>
         <image name="config" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
-        <image name="map.jpg" width="700" height="457"/>
+        <image name="map.png" width="1548" height="906"/>
         <image name="more" width="25" height="25"/>
     </resources>
 </document>
