@@ -37,7 +37,9 @@
 
 - (IBAction)onRefreshPressed:(id)sender {
     NSLog(@"刷新数据");
+    [self.arrayBLE removeAllObjects];
     [self scan];
+    [self.configTableView reloadData];
 }
 
 - (void) initIcons {
@@ -64,6 +66,23 @@
     _arrayServices = [[NSMutableArray alloc] init];
     _connectedBeacon = [[XBeacon alloc] init];
     [self initIcons];
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"下拉刷新"];
+    [self.refreshControl addTarget:self action:@selector(RefreshViewControlEventValueChanged) forControlEvents:UIControlEventValueChanged];
+    
+}
+
+-(void)RefreshViewControlEventValueChanged{
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"刷新中..."];
+    
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:2.0f];
+}
+
+-(void)loadData{
+    [self.arrayBLE removeAllObjects];
+    [self scan];
+    [self.configTableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -176,6 +195,10 @@
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
     if (![beacon.discoveredPeripheral.name  isEqual: BEACON_NAME]){
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                                  @"信息" message:@"仅支持对NowBeacon的参数配置" delegate:self
+                                                 cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
         return;
     }
     CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
