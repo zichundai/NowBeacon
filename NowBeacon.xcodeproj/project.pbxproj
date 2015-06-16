@@ -45,6 +45,7 @@
 		56C049861B185F28008591B8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C0497C1B185F28008591B8 /* 3.png */; };
 		56F124A31B30687C001B0E3F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F1249F1B30687C001B0E3F /* LoginViewController.m */; };
 		56F124A41B30687C001B0E3F /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F124A01B30687C001B0E3F /* MainTabViewController.m */; };
+		56F124A71B307177001B0E3F /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F124A61B307177001B0E3F /* UserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		56F124A01B30687C001B0E3F /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		56F124A11B30687C001B0E3F /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		56F124A21B30687C001B0E3F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		56F124A51B307177001B0E3F /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		56F124A61B307177001B0E3F /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 		566C6F2C1B16F86100EDC546 /* NowBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				56F124A51B307177001B0E3F /* UserInfo.h */,
+				56F124A61B307177001B0E3F /* UserInfo.m */,
 				56F1249F1B30687C001B0E3F /* LoginViewController.m */,
 				56F124A01B30687C001B0E3F /* MainTabViewController.m */,
 				56F124A11B30687C001B0E3F /* MainTabViewController.h */,
@@ -363,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F124A71B307177001B0E3F /* UserInfo.m in Sources */,
 				562A40491B2ECD67001A3FA7 /* XHRadarPointView.m in Sources */,
 				56F124A41B30687C001B0E3F /* MainTabViewController.m in Sources */,
 				566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */,

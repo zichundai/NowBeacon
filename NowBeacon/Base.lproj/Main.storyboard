@@ -443,7 +443,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="maintab" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" itemPositioning="fill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -1044,8 +1044,112 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="acB-40-zZH">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ik-Wd-H5p">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-9R-wcN">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjk-gn-mrd">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="cJ4-sz-OEQ"/>
+                                </constraints>
+                                <state key="normal" title="登录">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cJ4-sz-OEQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="cJ4-sz-OEQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onLoginClick:" destination="nYI-Q0-Rim" eventType="touchUpInside" id="tzg-kh-RKO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1B-mx-6tH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="注册">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRegisterClick:" destination="nYI-Q0-Rim" eventType="touchUpInside" id="RdP-WP-jdl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="t1B-mx-6tH" firstAttribute="baseline" secondItem="Sjk-gn-mrd" secondAttribute="baseline" id="07d-qu-jnH"/>
+                            <constraint firstItem="qaZ-9R-wcN" firstAttribute="leading" secondItem="1ik-Wd-H5p" secondAttribute="leading" id="4PK-5w-T8h"/>
+                            <constraint firstItem="t1B-mx-6tH" firstAttribute="leading" secondItem="Sjk-gn-mrd" secondAttribute="trailing" constant="88" id="78n-70-TaH">
+                                <variation key="heightClass=regular" constant="13"/>
+                            </constraint>
+                            <constraint firstItem="1ik-Wd-H5p" firstAttribute="leading" secondItem="acB-40-zZH" secondAttribute="leadingMargin" constant="10" id="9Kq-gM-9A7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1ik-Wd-H5p" secondAttribute="trailing" constant="14" id="HTT-gO-usS"/>
+                            <constraint firstAttribute="centerX" secondItem="Sjk-gn-mrd" secondAttribute="centerX" id="JxB-ta-O4B"/>
+                            <constraint firstItem="Sjk-gn-mrd" firstAttribute="leading" secondItem="acB-40-zZH" secondAttribute="leading" constant="211" id="QG4-Bi-wTM"/>
+                            <constraint firstItem="1ik-Wd-H5p" firstAttribute="top" secondItem="Ymf-78-Cu7" secondAttribute="bottom" constant="72" id="TVm-Nk-AvG"/>
+                            <constraint firstItem="qaZ-9R-wcN" firstAttribute="top" secondItem="1ik-Wd-H5p" secondAttribute="bottom" constant="24" id="Tts-E6-PZv"/>
+                            <constraint firstItem="Sjk-gn-mrd" firstAttribute="top" secondItem="qaZ-9R-wcN" secondAttribute="bottom" constant="48" id="Y0V-f0-NX3"/>
+                            <constraint firstItem="qaZ-9R-wcN" firstAttribute="trailing" secondItem="1ik-Wd-H5p" secondAttribute="trailing" id="bNq-vU-Vf4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1ik-Wd-H5p"/>
+                                <exclude reference="qaZ-9R-wcN"/>
+                                <exclude reference="Sjk-gn-mrd"/>
+                                <exclude reference="t1B-mx-6tH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9Kq-gM-9A7"/>
+                                <exclude reference="HTT-gO-usS"/>
+                                <exclude reference="TVm-Nk-AvG"/>
+                                <exclude reference="4PK-5w-T8h"/>
+                                <exclude reference="Tts-E6-PZv"/>
+                                <exclude reference="bNq-vU-Vf4"/>
+                                <exclude reference="JxB-ta-O4B"/>
+                                <exclude reference="QG4-Bi-wTM"/>
+                                <exclude reference="Y0V-f0-NX3"/>
+                                <exclude reference="07d-qu-jnH"/>
+                                <exclude reference="78n-70-TaH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="1ik-Wd-H5p"/>
+                                <include reference="qaZ-9R-wcN"/>
+                                <include reference="Sjk-gn-mrd"/>
+                                <include reference="t1B-mx-6tH"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="9Kq-gM-9A7"/>
+                                <include reference="HTT-gO-usS"/>
+                                <include reference="TVm-Nk-AvG"/>
+                                <include reference="4PK-5w-T8h"/>
+                                <include reference="Tts-E6-PZv"/>
+                                <include reference="bNq-vU-Vf4"/>
+                                <include reference="JxB-ta-O4B"/>
+                                <exclude reference="QG4-Bi-wTM"/>
+                                <include reference="Y0V-f0-NX3"/>
+                                <include reference="07d-qu-jnH"/>
+                                <include reference="78n-70-TaH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="modal" id="4OF-bq-sqf"/>
@@ -1053,7 +1157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTh-2y-LR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1805" y="-95.25"/>
+            <point key="canvasLocation" x="-1341" y="-99.75"/>
         </scene>
     </scenes>
     <resources>

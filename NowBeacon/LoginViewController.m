@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "MainTabViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "UserInfo.h"
 
 @interface LoginViewController ()<CLLocationManagerDelegate>
 @property (strong, nonatomic)CLLocationManager *locationManager;
@@ -21,7 +22,7 @@
     // Do any additional setup after loading the view.
     if([CLLocationManager locationServicesEnabled]) {
         self.locationManager = [[CLLocationManager alloc] init];
-        self.locationManager requestAlwaysAuthorization
+        [self.locationManager requestAlwaysAuthorization];
         self.locationManager.delegate = self;    // 判断定位操作是否被允许
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = 1000.0f;
@@ -35,6 +36,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)showWarningAlert:(NSString *)errorMsg{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                              @"错误" message:errorMsg delegate:self
+                                             cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+
 - (IBAction)onRegisterClick:(id)sender {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                               @"信息" message:@"注册请联系QQ：13644949" delegate:self
@@ -44,6 +53,9 @@
 }
 
 - (IBAction)onLoginClick:(id)sender {
+    if ([UserInfo getLatitude]==-1 || [UserInfo getLongitude]==-1) {
+        [self showWarningAlert:@"获取位置信息失败，请检查！"];
+    }
     MainTabViewController *viewController = [self.storyboard     instantiateViewControllerWithIdentifier:@"maintab"];
     [self presentModalViewController:viewController animated:YES];
 }
@@ -69,6 +81,8 @@
 
     NSLog(@"纬度:%f",latitude);
     NSLog(@"经度:%f",longitude);
+    [UserInfo setLatitude:latitude];
+    [UserInfo setLongitude:longitude];
     // 停止位置更新
     [manager stopUpdatingLocation];
 
