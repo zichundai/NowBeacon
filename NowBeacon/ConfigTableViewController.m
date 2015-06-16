@@ -72,6 +72,11 @@
     
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.centralManager stopScan];
+}
+
+
 -(void)RefreshViewControlEventValueChanged{
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"刷新中..."];
     
@@ -125,8 +130,8 @@
     [self.configTableView reloadData];
     return YES;
 }
-- (void)cleanup
-{
+
+- (void)cleanup{
     // Don't do anything if we're not connected
     if ((self.discoveredPeripheral.state != CBPeripheralStateConnected)) {
         return;
@@ -135,9 +140,9 @@
     // If we've got this far, we're connected, but we're not subscribed, so we just disconnect
     [self.centralManager cancelPeripheralConnection:self.discoveredPeripheral];
 }
+
 /** Scan for peripherals  **/
-- (void)scan
-{
+- (void)scan{
     [self.centralManager scanForPeripheralsWithServices:nil
                                                 options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
     
