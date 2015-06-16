@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XHRadarView.h"
 
-@interface FirstViewController : UIViewController
+@interface FirstViewController : UIViewController <XHRadarViewDataSource, XHRadarViewDelegate>
 
+@property (nonatomic, strong) XHRadarView *radarView;
 
 @end
 

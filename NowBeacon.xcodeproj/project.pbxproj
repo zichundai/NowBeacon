@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562A40481B2ECD67001A3FA7 /* XHRadarIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */; };
+		562A40491B2ECD67001A3FA7 /* XHRadarPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */; };
+		562A404A1B2ECD67001A3FA7 /* XHRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40471B2ECD67001A3FA7 /* XHRadarView.m */; };
 		565B2AC31B2547C40017A862 /* search4.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B2AC21B2547C40017A862 /* search4.png */; };
 		565B2AC51B25D24B0017A862 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B2AC41B25D24B0017A862 /* map.png */; };
 		56651F541B1FDF660011F62C /* search3.png in Resources */ = {isa = PBXBuildFile; fileRef = 56651F501B1FDF660011F62C /* search3.png */; };
@@ -53,6 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		562A40421B2ECD67001A3FA7 /* XHRadarIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRadarIndicatorView.h; sourceTree = "<group>"; };
+		562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRadarIndicatorView.m; sourceTree = "<group>"; };
+		562A40441B2ECD67001A3FA7 /* XHRadarPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRadarPointView.h; sourceTree = "<group>"; };
+		562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRadarPointView.m; sourceTree = "<group>"; };
+		562A40461B2ECD67001A3FA7 /* XHRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRadarView.h; sourceTree = "<group>"; };
+		562A40471B2ECD67001A3FA7 /* XHRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRadarView.m; sourceTree = "<group>"; };
 		565B2AC21B2547C40017A862 /* search4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search4.png; path = NowBeacon/icons/search4.png; sourceTree = "<group>"; };
 		565B2AC41B25D24B0017A862 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = NowBeacon/icons/map.png; sourceTree = "<group>"; };
 		56651F501B1FDF660011F62C /* search3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search3.png; path = NowBeacon/icons/search3.png; sourceTree = "<group>"; };
@@ -141,6 +150,12 @@
 		566C6F2C1B16F86100EDC546 /* NowBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				562A40421B2ECD67001A3FA7 /* XHRadarIndicatorView.h */,
+				562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */,
+				562A40441B2ECD67001A3FA7 /* XHRadarPointView.h */,
+				562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */,
+				562A40461B2ECD67001A3FA7 /* XHRadarView.h */,
+				562A40471B2ECD67001A3FA7 /* XHRadarView.m */,
 				56C0496A1B18530C008591B8 /* XBeacon.m */,
 				56C0496B1B18530C008591B8 /* XBeacon.h */,
 				56C0496C1B18530C008591B8 /* MBProgressHUD.h */,
@@ -338,10 +353,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				562A40491B2ECD67001A3FA7 /* XHRadarPointView.m in Sources */,
 				566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */,
+				562A404A1B2ECD67001A3FA7 /* XHRadarView.m in Sources */,
 				56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */,
 				567D89F31B18672900AABC00 /* DetailViewController.m in Sources */,
 				56C0496E1B18530C008591B8 /* XBeacon.m in Sources */,
+				562A40481B2ECD67001A3FA7 /* XHRadarIndicatorView.m in Sources */,
 				56C049721B18547C008591B8 /* BLEInfo.m in Sources */,
 				567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */,
 				566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */,
