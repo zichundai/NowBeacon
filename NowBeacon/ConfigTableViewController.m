@@ -208,8 +208,8 @@
     }
     CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
     if(disPeripheral){
-        
-        DetailViewController *viewController = [self.storyboard     instantiateViewControllerWithIdentifier:@"detailcontroller"];
+        NSLog(@"配置的Beacon的UUID是：%@", disPeripheral.identifier);
+        DetailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"detailcontroller"];
         viewController.connectedPeripheral = disPeripheral;
         [self.navigationController pushViewController:viewController animated:YES];
         [self.centralManager stopScan];

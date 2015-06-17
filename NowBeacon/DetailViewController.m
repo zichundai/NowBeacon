@@ -158,8 +158,7 @@
             _segInterval.selectedSegmentIndex = 3;
         }
         NSLog(@"FFF3 Received : %i", iInterval);
-    }
-    else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF4"]){
+    }else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF4"]){
         _charTxPower = characteristic;
         int iTxPower = 0;
         [_charTxPower.value getBytes:&iTxPower length:2];
@@ -173,11 +172,13 @@
             _segPower.selectedSegmentIndex = 3;
         }
         NSLog(@"FFF4 Received : %i", iTxPower);
-    }
-    else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF5"]){
+    }else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF5"]){
         NSLog(@"FFF5 Received : %@", testString);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }else if ([characteristic.UUID.UUIDString isEqualToString:@"2A23"]){
+        NSLog(@"2A23 System ID : %@", testString);
     }
+    
     // Log it
     //NSLog(@"Received: %@", stringFromData);
 }

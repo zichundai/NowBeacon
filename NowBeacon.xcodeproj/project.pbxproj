@@ -161,10 +161,10 @@
 			children = (
 				56F124A51B307177001B0E3F /* UserInfo.h */,
 				56F124A61B307177001B0E3F /* UserInfo.m */,
-				56F1249F1B30687C001B0E3F /* LoginViewController.m */,
-				56F124A01B30687C001B0E3F /* MainTabViewController.m */,
 				56F124A11B30687C001B0E3F /* MainTabViewController.h */,
+				56F124A01B30687C001B0E3F /* MainTabViewController.m */,
 				56F124A21B30687C001B0E3F /* LoginViewController.h */,
+				56F1249F1B30687C001B0E3F /* LoginViewController.m */,
 				562A40421B2ECD67001A3FA7 /* XHRadarIndicatorView.h */,
 				562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */,
 				562A40441B2ECD67001A3FA7 /* XHRadarPointView.h */,
@@ -298,6 +298,7 @@
 				TargetAttributes = {
 					566C6F291B16F86100EDC546 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = ZC26TQK8HN;
 					};
 					566C6F451B16F86100EDC546 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -509,9 +510,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NowBeacon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -519,9 +523,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NowBeacon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
