@@ -159,7 +159,15 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="更多" image="more" id="zzc-yr-EfI"/>
-                    <navigationItem key="navigationItem" title="更多" id="LiW-uY-iwt"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="更多" id="LiW-uY-iwt">
+                        <barButtonItem key="rightBarButtonItem" title="退出登录" id="PoZ-v4-1df">
+                            <connections>
+                                <action selector="onLogoutClick:" destination="pNK-om-QFz" id="sMB-yr-pDs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="moreTableView" destination="VbU-FV-OSz" id="JIQ-h1-B6N"/>
                         <segue destination="Bg7-gi-x7q" kind="push" id="BZH-IC-ajM"/>
@@ -1037,12 +1045,13 @@
         <!--Login View Controller-->
         <scene sceneID="nd5-d4-fPd">
             <objects>
-                <viewController id="nYI-Q0-Rim" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginview" id="nYI-Q0-Rim" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ymf-78-Cu7"/>
                         <viewControllerLayoutGuide type="bottom" id="lYM-im-VLe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="acB-40-zZH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ik-Wd-H5p">

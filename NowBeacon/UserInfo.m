@@ -7,8 +7,8 @@
 //
 
 #import "UserInfo.h"
-static NSString *userName;
-static NSString *userType;
+static NSString *userName = @"";
+static NSString *userType = @"";
 static double latitude = -1;
 static double longitude = -1;
 
@@ -36,4 +36,10 @@ static double longitude = -1;
 + (void) setLongitude:(double) longi{
     longitude = longi;
 }
+
++ (void) clear{
+    userName = @"";
+    userType = @"";
+}
+
 @end

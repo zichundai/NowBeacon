@@ -60,6 +60,9 @@
     [self presentModalViewController:viewController animated:YES];
 }
 
+- (BOOL) loginCheck:(NSString *)username password:(NSString *)password{
+    return NO;
+}
 #pragma mark - CLLocationManagerDelegate
 // 地理位置发生改变时触发
 /*

@@ -8,6 +8,8 @@
 
 #import "MoreViewController.h"
 #import "ContactUsViewController.h"
+#import "UserInfo.h"
+#import "LoginViewController.h"
 
 @interface MoreViewController ()
 
@@ -69,6 +71,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)onLogoutClick:(id)sender {
+    [UserInfo clear];
+    LoginViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginview"];
+    [self presentModalViewController:viewController animated:YES];
+
 }
 
 /*

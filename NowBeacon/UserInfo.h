@@ -16,4 +16,5 @@
 + (NSString *) getUserName;
 + (double) getLatitude;
 + (double) getLongitude;
++ (void) clear;
 @end
