@@ -10,6 +10,7 @@
 #import "MainTabViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "UserInfo.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface LoginViewController ()<CLLocationManagerDelegate>
 @property (strong, nonatomic)CLLocationManager *locationManager;
@@ -56,25 +57,32 @@
     if ([UserInfo getLatitude]==-1 || [UserInfo getLongitude]==-1) {
         [self showWarningAlert:@"获取位置信息失败，请检查！"];
     }
-    MainTabViewController *viewController = [self.storyboard     instantiateViewControllerWithIdentifier:@"maintab"];
-    [self presentModalViewController:viewController animated:YES];
+    //[self locationManager:]
+    //MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
+    //[self presentModalViewController:viewController animated:YES];
 }
 
 - (BOOL) loginCheck:(NSString *)username password:(NSString *)password{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //申明返回的结果是json类型
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    //申明请求的数据是json类型
+    manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    //如果报接受类型不一致请替换一致text/html或别的
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    //传入的参数
+    NSDictionary *parameters = @{@"username":username,@"username":password};
+    //你的接口地址
+    NSString *url=@"http://www.shinskytech.com/login_check.php";
+    //发送请求
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
     return NO;
 }
 #pragma mark - CLLocationManagerDelegate
-// 地理位置发生改变时触发
-/*
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    // 获取经纬度
-    NSLog(@"纬度:%f",newLocation.coordinate.latitude);
-    NSLog(@"经度:%f",newLocation.coordinate.longitude);
-    // 停止位置更新
-    [manager stopUpdatingLocation];
-}*/
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     // 获取经纬度
     CLLocation *checkinLocation = [locations lastObject];
