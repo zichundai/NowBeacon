@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "UserInfo.h"
 #import "AFHTTPRequestOperation.h"
+#import "JSONKit.h"
 
 @interface LoginViewController ()<CLLocationManagerDelegate>
 @property (strong, nonatomic)CLLocationManager *locationManager;
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     if([CLLocationManager locationServicesEnabled]) {
         self.locationManager = [[CLLocationManager alloc] init];
@@ -57,30 +59,37 @@
     if ([UserInfo getLatitude]==-1 || [UserInfo getLongitude]==-1) {
         [self showWarningAlert:@"获取位置信息失败，请检查！"];
     }
-    //[self locationManager:]
-    //MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
-    //[self presentModalViewController:viewController animated:YES];
-}
-
-- (BOOL) loginCheck:(NSString *)username password:(NSString *)password{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //申明返回的结果是json类型
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     //申明请求的数据是json类型
     manager.requestSerializer=[AFJSONRequestSerializer serializer];
+    
     //如果报接受类型不一致请替换一致text/html或别的
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     //传入的参数
-    NSDictionary *parameters = @{@"username":username,@"username":password};
+    NSDictionary *parameters = @{@"username":_textUsername.text,@"password":_textPassword.text};
     //你的接口地址
     NSString *url=@"http://www.shinskytech.com/login_check.php";
+    
     //发送请求
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        id res = [responseObject objectForKey:@"result"];
+        NSLog(@"result=%@",res);
+        if([res isEqual:@"1"]){
+            MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
+            [self presentModalViewController:viewController animated:YES];
+        }else{
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                                      @"错误" message:@"用户名或密码错误，请检查" delegate:self
+                                                     cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alertView show];
+
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    return NO;
 }
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{

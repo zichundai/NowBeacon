@@ -1058,13 +1058,13 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-9R-wcN">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjk-gn-mrd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1161,6 +1161,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="textPassword" destination="qaZ-9R-wcN" id="6cQ-dA-MAk"/>
+                        <outlet property="textUsername" destination="1ik-Wd-H5p" id="ztd-32-zsW"/>
                         <segue destination="49e-Tb-3d3" kind="modal" id="4OF-bq-sqf"/>
                     </connections>
                 </viewController>

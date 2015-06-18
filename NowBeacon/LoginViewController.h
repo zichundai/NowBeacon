@@ -11,5 +11,7 @@
 #import "AFNetworking.h"
 
 @interface LoginViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *textUsername;
+@property (strong, nonatomic) IBOutlet UITextField *textPassword;
 
 @end
