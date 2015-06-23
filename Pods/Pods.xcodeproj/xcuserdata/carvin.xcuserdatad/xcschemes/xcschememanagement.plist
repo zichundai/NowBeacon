@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-TSValidatedTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9F76F2D30168FE023651D126</key>
+		<key>BF4334334993226C146179CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E83941D7BADF8CA327FFDA1A</key>
+		<key>D0FB31A3691615E172C1054B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE626B971294660D66913A96</key>
 		<dict>
 			<key>primary</key>
 			<true/>

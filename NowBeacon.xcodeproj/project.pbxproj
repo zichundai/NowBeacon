@@ -23,6 +23,7 @@
 		566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3D1B16F86100EDC546 /* Images.xcassets */; };
 		566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */; };
 		566C6F4D1B16F86100EDC546 /* NowBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */; };
+		566FAA301B394CDA0063553D /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 566FAA2F1B394CDA0063553D /* UIColor+CustomColors.m */; };
 		567D89F31B18672900AABC00 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F21B18672900AABC00 /* DetailViewController.m */; };
 		567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */; };
 		568E90FF1B340559006A8F9B /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E90FE1B340559006A8F9B /* welcome_bg.png */; };
@@ -90,6 +91,8 @@
 		566C6F461B16F86100EDC546 /* NowBeaconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NowBeaconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566C6F4B1B16F86100EDC546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NowBeaconTests.m; sourceTree = "<group>"; };
+		566FAA2E1B394CDA0063553D /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		566FAA2F1B394CDA0063553D /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		567D89F11B18672900AABC00 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		567D89F21B18672900AABC00 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
@@ -185,40 +188,11 @@
 		566C6F2C1B16F86100EDC546 /* NowBeacon */ = {
 			isa = PBXGroup;
 			children = (
-				56C049701B18547C008591B8 /* BLEInfo.m */,
-				56C049711B18547C008591B8 /* BLEInfo.h */,
-				56F124A51B307177001B0E3F /* UserInfo.h */,
-				56F124A61B307177001B0E3F /* UserInfo.m */,
-				56F124A11B30687C001B0E3F /* MainTabViewController.h */,
-				56F124A01B30687C001B0E3F /* MainTabViewController.m */,
-				56F124A21B30687C001B0E3F /* LoginViewController.h */,
-				56F1249F1B30687C001B0E3F /* LoginViewController.m */,
-				562A40421B2ECD67001A3FA7 /* XHRadarIndicatorView.h */,
-				562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */,
-				562A40441B2ECD67001A3FA7 /* XHRadarPointView.h */,
-				562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */,
-				562A40461B2ECD67001A3FA7 /* XHRadarView.h */,
-				562A40471B2ECD67001A3FA7 /* XHRadarView.m */,
-				56C0496A1B18530C008591B8 /* XBeacon.m */,
-				56C0496B1B18530C008591B8 /* XBeacon.h */,
-				56C0496C1B18530C008591B8 /* MBProgressHUD.h */,
-				56C0496D1B18530C008591B8 /* MBProgressHUD.m */,
-				56C049651B181AD4008591B8 /* ConfigTableViewController.h */,
-				56C049661B181AD4008591B8 /* ConfigTableViewController.m */,
 				566C6F311B16F86100EDC546 /* AppDelegate.h */,
 				566C6F321B16F86100EDC546 /* AppDelegate.m */,
-				566C6F341B16F86100EDC546 /* FirstViewController.h */,
-				566C6F351B16F86100EDC546 /* FirstViewController.m */,
-				569488FB1B1762A9002C8B3D /* MoreViewController.h */,
-				569488FC1B1762A9002C8B3D /* MoreViewController.m */,
-				567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */,
-				567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */,
-				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
-				567D89F11B18672900AABC00 /* DetailViewController.h */,
-				567D89F21B18672900AABC00 /* DetailViewController.m */,
-				566C6F3D1B16F86100EDC546 /* Images.xcassets */,
-				566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */,
+				566FAA311B394CF70063553D /* CustomClass */,
 				566C6F2D1B16F86100EDC546 /* Supporting Files */,
+				566FAA321B394D370063553D /* ViewController */,
 			);
 			path = NowBeacon;
 			sourceTree = "<group>";
@@ -226,6 +200,9 @@
 		566C6F2D1B16F86100EDC546 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				566C6F3D1B16F86100EDC546 /* Images.xcassets */,
+				566C6F3F1B16F86100EDC546 /* LaunchScreen.xib */,
+				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
 				566C6F2E1B16F86100EDC546 /* Info.plist */,
 				566C6F2F1B16F86100EDC546 /* main.m */,
 			);
@@ -247,6 +224,50 @@
 				566C6F4B1B16F86100EDC546 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		566FAA311B394CF70063553D /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				56C049711B18547C008591B8 /* BLEInfo.h */,
+				56C049701B18547C008591B8 /* BLEInfo.m */,
+				56C0496C1B18530C008591B8 /* MBProgressHUD.h */,
+				56C0496D1B18530C008591B8 /* MBProgressHUD.m */,
+				566FAA2E1B394CDA0063553D /* UIColor+CustomColors.h */,
+				566FAA2F1B394CDA0063553D /* UIColor+CustomColors.m */,
+				56F124A51B307177001B0E3F /* UserInfo.h */,
+				56F124A61B307177001B0E3F /* UserInfo.m */,
+				56C0496B1B18530C008591B8 /* XBeacon.h */,
+				56C0496A1B18530C008591B8 /* XBeacon.m */,
+				562A40421B2ECD67001A3FA7 /* XHRadarIndicatorView.h */,
+				562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */,
+				562A40441B2ECD67001A3FA7 /* XHRadarPointView.h */,
+				562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */,
+				562A40461B2ECD67001A3FA7 /* XHRadarView.h */,
+				562A40471B2ECD67001A3FA7 /* XHRadarView.m */,
+			);
+			name = CustomClass;
+			sourceTree = "<group>";
+		};
+		566FAA321B394D370063553D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				56C049651B181AD4008591B8 /* ConfigTableViewController.h */,
+				56C049661B181AD4008591B8 /* ConfigTableViewController.m */,
+				567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */,
+				567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */,
+				567D89F11B18672900AABC00 /* DetailViewController.h */,
+				567D89F21B18672900AABC00 /* DetailViewController.m */,
+				566C6F341B16F86100EDC546 /* FirstViewController.h */,
+				566C6F351B16F86100EDC546 /* FirstViewController.m */,
+				56F124A21B30687C001B0E3F /* LoginViewController.h */,
+				56F1249F1B30687C001B0E3F /* LoginViewController.m */,
+				56F124A11B30687C001B0E3F /* MainTabViewController.h */,
+				56F124A01B30687C001B0E3F /* MainTabViewController.m */,
+				569488FB1B1762A9002C8B3D /* MoreViewController.h */,
+				569488FC1B1762A9002C8B3D /* MoreViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		569488FE1B1770A7002C8B3D /* icons */ = {
@@ -462,6 +483,7 @@
 				567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */,
 				566C6F361B16F86100EDC546 /* FirstViewController.m in Sources */,
 				566C6F301B16F86100EDC546 /* main.m in Sources */,
+				566FAA301B394CDA0063553D /* UIColor+CustomColors.m in Sources */,
 				569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */,
 				56C0496F1B18530C008591B8 /* MBProgressHUD.m in Sources */,
 			);

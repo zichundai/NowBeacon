@@ -8,16 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "TSValidatedTextField.h"
+#import "UIColor+CustomColors.h"
 #define SECTION_NAME                    @"SECTION_NAME"
 
 
 @interface DetailViewController : UIViewController{
     CBPeripheral *connectedPeripheral;
 }
-@property (strong, nonatomic) IBOutlet UITextField *textUUID;
-@property (strong, nonatomic) IBOutlet UITextField *textMajor;
-@property (strong, nonatomic) IBOutlet UITextField *textMinor;
-@property (strong, nonatomic) IBOutlet UITextField *textEquipment;
+@property (strong, nonatomic) IBOutlet TSValidatedTextField *textUUID;
+@property (strong, nonatomic) IBOutlet TSValidatedTextField *textMajor;
+@property (strong, nonatomic) IBOutlet TSValidatedTextField *textMinor;
+@property (strong, nonatomic) IBOutlet TSValidatedTextField *textEquipment;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segInterval;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segPower;
 

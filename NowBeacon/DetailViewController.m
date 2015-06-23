@@ -25,6 +25,42 @@
 @implementation DetailViewController
 @synthesize connectedPeripheral;
 
+
+#pragma mark - 窗体的处理
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+    _arrayServices = [[NSMutableArray alloc] init];
+    _connectedBeacon = [[XBeacon alloc] init];
+    centralManager.delegate = self;
+    [self configAllTextField];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    if(connectedPeripheral.state == CBPeripheralStateConnected) {
+        [centralManager cancelPeripheralConnection:connectedPeripheral];
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) configAllTextField {
+    _textUUID.regexpPattern = @"^[a-fA-F0-9]{32}";
+    _textUUID.regexpValidColor = [UIColor validColor];
+    _textUUID.regexpInvalidColor = [UIColor invalidColor];
+    _textMajor.regexpPattern = @"^[a-fA-F0-9]{4}";
+    _textMajor.regexpValidColor = [UIColor validColor];
+    _textMajor.regexpInvalidColor = [UIColor invalidColor];
+    _textMinor.regexpPattern = @"^[a-fA-F0-9]{4}";
+    _textMinor.regexpValidColor = [UIColor validColor];
+    _textMinor.regexpInvalidColor = [UIColor invalidColor];
+
+}
+
 #pragma mark - CentralManager委托实现
 - (void)scan
 {
@@ -238,29 +274,6 @@
                               @"信息" message:msg delegate:self
                                              cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alertView show];
-}
-
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
-    _arrayServices = [[NSMutableArray alloc] init];
-    _connectedBeacon = [[XBeacon alloc] init];
-    centralManager.delegate = self;
-    
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    if(connectedPeripheral.state == CBPeripheralStateConnected) {
-        [centralManager cancelPeripheralConnection:connectedPeripheral];
-    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
