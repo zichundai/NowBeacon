@@ -10,6 +10,8 @@
 #import "XBeacon.h"
 #import "MBProgressHUD.h"
 #import "UserInfo.h"
+#import "AFNetworking.h"
+#import "AFHTTPRequestOperation.h"
 
 @interface DetailViewController ()<CBCentralManagerDelegate, CBPeripheralDelegate, CBPeripheralManagerDelegate, MBProgressHUDDelegate>{
     CBCentralManager      *centralManager;
@@ -221,6 +223,7 @@
     NSString *strWriteUUID = _textUUID.text;
     NSData *writeUUID = (NSData *)[strWriteUUID stringToHexData];
     [connectedPeripheral writeValue:writeUUID forCharacteristic:_charUUID type:CBCharacteristicWriteWithResponse];
+    
 }
 
 -(void)showWarningAlert:(NSString *)errorMsg{
@@ -290,7 +293,36 @@
     }else if(characteristic.UUID == _charInterval.UUID){
         NSLog(@"写入interval成功");
         [self showInfoAlert:@"写入参数成功！"];
-        [self.navigationController popViewControllerAnimated:YES];
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        //申明返回的结果是json类型
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        //申明请求的数据是json类型
+        manager.requestSerializer=[AFJSONRequestSerializer serializer];
+        
+        //如果报接受类型不一致请替换一致text/html或别的
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        //传入的参数
+        NSDictionary *parameters = @{@"username":[UserInfo getUserName],@"latitude":[NSNumber numberWithDouble:[UserInfo getLatitude]], @"longitude":[NSNumber numberWithDouble:[UserInfo getLongitude]], @"uuid": _textUUID.text, @"major":_textMajor.text, @"minor":_textMinor.text, @"interval":[NSNumber numberWithDouble:_segInterval.selectedSegmentIndex], @"power":[NSNumber numberWithDouble:_segPower.selectedSegmentIndex]};
+        //你的接口地址
+        NSString *url=@"http://www.shinskytech.com/add_ibeacon.php";
+        //发送请求
+        [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+            id res = [responseObject objectForKey:@"result"];
+            NSLog(@"result=%@",res);
+            if([res isEqual:@"TRUE"]){
+                [self.navigationController popViewControllerAnimated:YES];
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                                          @"错误" message:@"连接服务器失败，请检查网络" delegate:self
+                                                         cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alertView show];
+                
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        //[self.navigationController popViewControllerAnimated:YES];
         int iPower = 0;
         if (_segPower.selectedSegmentIndex == 0) {
             iPower = 0x08;
@@ -306,9 +338,8 @@
         //[connectedPeripheral writeValue:(NSData *)writeTxPower forCharacteristic:_charTxPower type:CBCharacteristicWriteWithResponse];
     }else if(characteristic.UUID == _charTxPower.UUID){
         NSLog(@"写入tx power成功");
-        [self.navigationController popViewControllerAnimated:YES];
     }
-};
+}
 
 @end
 
