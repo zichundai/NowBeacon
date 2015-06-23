@@ -82,7 +82,6 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
-    //_lableInfo.text = @"连接成功！";
     [self.arrayServices removeAllObjects];
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
@@ -94,7 +93,6 @@
 
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
-    //_lableInfo.text = @"连接失败！";
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
@@ -167,21 +165,21 @@
             [dic setValue:characteristic.value forKey:characteristic.UUID.description];
         }
     }
-    NSString *testString = (NSString *)[characteristic.value dataToHexString];
+    NSString *strHexCharacteristic = (NSString *)[characteristic.value dataToHexString];
     if ([characteristic.UUID.UUIDString isEqualToString:@"FFF1"]){
         _charUUID = characteristic;
-        _textUUID.text = [testString uppercaseString];
-        NSLog(@"FFF1 Received string: %@", testString);
+        _textUUID.text = [strHexCharacteristic uppercaseString];
+        NSLog(@"FFF1 Received string: %@", strHexCharacteristic);
         _textEquipment.enabled = NO;
         _textEquipment.text = peripheral.name;
     }
     else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF2"]){
         _charMajorMinor = characteristic;
-        if ([testString length] == 8){
-            _textMajor.text = [[testString substringWithRange:NSMakeRange(0, 4)] uppercaseString];
-            _textMinor.text = [[testString substringWithRange:NSMakeRange(4, 4)] uppercaseString];
+        if ([strHexCharacteristic length] == 8){
+            _textMajor.text = [[strHexCharacteristic substringWithRange:NSMakeRange(0, 4)] uppercaseString];
+            _textMinor.text = [[strHexCharacteristic substringWithRange:NSMakeRange(4, 4)] uppercaseString];
         }
-        NSLog(@"FFF2 Received : %@", testString);
+        NSLog(@"FFF2 Received : %@", strHexCharacteristic);
     }
     else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF3"]){
         _charInterval = characteristic;
@@ -212,10 +210,19 @@
         }
         NSLog(@"FFF4 Received : %i", iTxPower);
     }else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF5"]){
-        NSLog(@"FFF5 Received : %@", testString);
+        NSLog(@"FFF5 Received : %@", strHexCharacteristic);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     }else if ([characteristic.UUID.UUIDString isEqualToString:@"2A23"]){
-        NSLog(@"2A23 System ID : %@", testString);
+        NSLog(@"2A23 System ID : %@", strHexCharacteristic);
+        self.strMac = strHexCharacteristic;
+    }else if ([characteristic.UUID.UUIDString isEqualToString:@"2A27"]){
+        const char *bsw=[characteristic.value bytes];
+        self.strHwVer = [NSString stringWithCString:bsw encoding:NSASCIIStringEncoding];
+        NSLog(@"2A27hw ver: %@", self.strHwVer);
+    }else if ([characteristic.UUID.UUIDString isEqualToString:@"2A28"]){
+        const char *bsw=[characteristic.value bytes];
+        self.strSwVer = [NSString stringWithCString:bsw encoding:NSASCIIStringEncoding];
+        NSLog(@"2A28 sw ver : %@", self.strSwVer);
     }
     
     // Log it
@@ -315,7 +322,8 @@
         //如果报接受类型不一致请替换一致text/html或别的
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
         //传入的参数
-        NSDictionary *parameters = @{@"username":[UserInfo getUserName],@"latitude":[NSNumber numberWithDouble:[UserInfo getLatitude]], @"longitude":[NSNumber numberWithDouble:[UserInfo getLongitude]], @"uuid": _textUUID.text, @"major":_textMajor.text, @"minor":_textMinor.text, @"interval":[NSNumber numberWithDouble:_segInterval.selectedSegmentIndex], @"power":[NSNumber numberWithDouble:_segPower.selectedSegmentIndex]};
+        NSDictionary *parameters = @{@"username":[UserInfo getUserName],@"latitude":[NSNumber numberWithDouble:[UserInfo getLatitude]], @"longitude":[NSNumber numberWithDouble:[UserInfo getLongitude]], @"uuid": _textUUID.text, @"major":_textMajor.text, @"minor":_textMinor.text, @"mac":self.strMac, @"interval":[self getIntervalString:_segInterval.selectedSegmentIndex], @"power":[self getPowerString:_segPower.selectedSegmentIndex], @"localname":_textEquipment.text, @"sw_ver":self.strSwVer, @"hw_ver":self.strHwVer};
+        NSLog(@"strSwVer,length=%lu", (unsigned long)[self.strSwVer length]);
         //你的接口地址
         NSString *url=@"http://www.shinskytech.com/add_ibeacon.php";
         //发送请求
@@ -354,6 +362,33 @@
     }
 }
 
+- (NSString *) getIntervalString : (NSInteger) index{
+    NSString *resString;
+    if (index == 1) {
+        resString = @"300ms";
+    } else if(index == 2){
+        resString = @"500ms";
+    }else if(index == 3){
+        resString = @"1000ms";
+    }else {
+        resString = @"100ms";
+    }
+    return resString;
+}
+
+- (NSString *) getPowerString : (NSInteger) index{
+    NSString *resString;
+    if (index == 1) {
+        resString = @"7m";
+    } else if(index == 2){
+        resString = @"10m";
+    }else if(index == 3){
+        resString = @"30m";
+    }else {
+        resString = @"3m";
+    }
+    return resString;
+}
 @end
 
 #pragma mark - String处理
@@ -361,9 +396,9 @@
 
 - (NSString *) dataToHexString
 {
-    NSUInteger          len = [self length];
-    char *              chars = (char *)[self bytes];
-    NSMutableString *   hexString = [[NSMutableString alloc] init];
+    NSUInteger len = [self length];
+    char *chars = (char *)[self bytes];
+    NSMutableString *hexString = [[NSMutableString alloc] init];
     
     for(NSUInteger i = 0; i < len; i++ )
         [hexString appendString:[NSString stringWithFormat:@"%0.2hhx", chars[i]]];
@@ -376,7 +411,7 @@
 
 - (NSData *) stringToHexData
 {
-    unsigned long len = [self length] /2;    // Target length
+    unsigned long len = [self length] /2;
     unsigned char *buf = malloc(len);
     unsigned char *whole_byte = buf;
     char byte_chars[3] = {'\0','\0','\0'};

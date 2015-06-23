@@ -28,6 +28,9 @@
 @property (strong, nonatomic) CBCharacteristic *charMajorMinor;
 @property (strong, nonatomic) CBCharacteristic *charInterval;
 @property (strong, nonatomic) CBCharacteristic *charTxPower;
+@property (strong, nonatomic) NSString *strMac;
+@property (strong, nonatomic) NSString *strSwVer;
+@property (strong, nonatomic) NSString *strHwVer;
 - (IBAction)touchView:(id)sender;
 
 - (void)saveConnectedBeaconParam;
