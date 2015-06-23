@@ -25,11 +25,15 @@
 		566C6F4D1B16F86100EDC546 /* NowBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 566C6F4C1B16F86100EDC546 /* NowBeaconTests.m */; };
 		567D89F31B18672900AABC00 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F21B18672900AABC00 /* DetailViewController.m */; };
 		567D89F61B18AF1C00AABC00 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */; };
+		568E90FF1B340559006A8F9B /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E90FE1B340559006A8F9B /* welcome_bg.png */; };
+		568E91021B340647006A8F9B /* login_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E91001B340647006A8F9B /* login_up.png */; };
+		568E91031B340647006A8F9B /* login_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E91011B340647006A8F9B /* login_down.png */; };
+		568E91061B341784006A8F9B /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E91041B341784006A8F9B /* user.png */; };
+		568E91071B341784006A8F9B /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 568E91051B341784006A8F9B /* password.png */; };
 		569488FD1B1762A9002C8B3D /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569488FC1B1762A9002C8B3D /* MoreViewController.m */; };
 		569489081B177121002C8B3D /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489051B177121002C8B3D /* notepad.png */; };
 		569489091B177121002C8B3D /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489061B177121002C8B3D /* phone.png */; };
 		5694890A1B177121002C8B3D /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489071B177121002C8B3D /* microphone.png */; };
-		56BBA4901B32BD7900C6E919 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 56BBA48F1B32BD7900C6E919 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C049661B181AD4008591B8 /* ConfigTableViewController.m */; };
 		56C049691B181C2C008591B8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C049681B181C2C008591B8 /* background.png */; };
 		56C0496E1B18530C008591B8 /* XBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0496A1B18530C008591B8 /* XBeacon.m */; };
@@ -90,13 +94,16 @@
 		567D89F21B18672900AABC00 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		567D89F41B18AF1C00AABC00 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		567D89F51B18AF1C00AABC00 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		568E90FE1B340559006A8F9B /* welcome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome_bg.png; path = NowBeacon/icons/welcome_bg.png; sourceTree = "<group>"; };
+		568E91001B340647006A8F9B /* login_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_up.png; path = NowBeacon/icons/login_up.png; sourceTree = "<group>"; };
+		568E91011B340647006A8F9B /* login_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login_down.png; path = NowBeacon/icons/login_down.png; sourceTree = "<group>"; };
+		568E91041B341784006A8F9B /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = NowBeacon/icons/user.png; sourceTree = "<group>"; };
+		568E91051B341784006A8F9B /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = password.png; path = NowBeacon/icons/password.png; sourceTree = "<group>"; };
 		569488FB1B1762A9002C8B3D /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		569488FC1B1762A9002C8B3D /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		569489051B177121002C8B3D /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notepad.png; path = NowBeacon/icons/notepad.png; sourceTree = "<group>"; };
 		569489061B177121002C8B3D /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = NowBeacon/icons/phone.png; sourceTree = "<group>"; };
 		569489071B177121002C8B3D /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphone.png; path = NowBeacon/icons/microphone.png; sourceTree = "<group>"; };
-		56BBA48E1B32BD7900C6E919 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		56BBA48F1B32BD7900C6E919 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		56C049651B181AD4008591B8 /* ConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigTableViewController.h; sourceTree = "<group>"; };
 		56C049661B181AD4008591B8 /* ConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTableViewController.m; sourceTree = "<group>"; };
 		56C049681B181C2C008591B8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = NowBeacon/icons/background.png; sourceTree = "<group>"; };
@@ -104,8 +111,8 @@
 		56C0496B1B18530C008591B8 /* XBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBeacon.h; sourceTree = "<group>"; };
 		56C0496C1B18530C008591B8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		56C0496D1B18530C008591B8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		56C049701B18547C008591B8 /* BLEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLEInfo.m; path = NowBeacon/BLEInfo.m; sourceTree = "<group>"; };
-		56C049711B18547C008591B8 /* BLEInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEInfo.h; path = NowBeacon/BLEInfo.h; sourceTree = "<group>"; };
+		56C049701B18547C008591B8 /* BLEInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEInfo.m; sourceTree = "<group>"; };
+		56C049711B18547C008591B8 /* BLEInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEInfo.h; sourceTree = "<group>"; };
 		56C049731B185F28008591B8 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = NowBeacon/icons/4.png; sourceTree = "<group>"; };
 		56C049741B185F28008591B8 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = NowBeacon/icons/5.png; sourceTree = "<group>"; };
 		56C049751B185F28008591B8 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = NowBeacon/icons/6.png; sourceTree = "<group>"; };
@@ -178,8 +185,8 @@
 		566C6F2C1B16F86100EDC546 /* NowBeacon */ = {
 			isa = PBXGroup;
 			children = (
-				56BBA48E1B32BD7900C6E919 /* JSONKit.h */,
-				56BBA48F1B32BD7900C6E919 /* JSONKit.m */,
+				56C049701B18547C008591B8 /* BLEInfo.m */,
+				56C049711B18547C008591B8 /* BLEInfo.h */,
 				56F124A51B307177001B0E3F /* UserInfo.h */,
 				56F124A61B307177001B0E3F /* UserInfo.m */,
 				56F124A11B30687C001B0E3F /* MainTabViewController.h */,
@@ -245,6 +252,11 @@
 		569488FE1B1770A7002C8B3D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				568E91041B341784006A8F9B /* user.png */,
+				568E91051B341784006A8F9B /* password.png */,
+				568E91001B340647006A8F9B /* login_up.png */,
+				568E91011B340647006A8F9B /* login_down.png */,
+				568E90FE1B340559006A8F9B /* welcome_bg.png */,
 				565B2AC41B25D24B0017A862 /* map.png */,
 				565B2AC21B2547C40017A862 /* search4.png */,
 				56651F501B1FDF660011F62C /* search3.png */,
@@ -264,8 +276,6 @@
 				569489051B177121002C8B3D /* notepad.png */,
 				569489061B177121002C8B3D /* phone.png */,
 				569489071B177121002C8B3D /* microphone.png */,
-				56C049701B18547C008591B8 /* BLEInfo.m */,
-				56C049711B18547C008591B8 /* BLEInfo.h */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -361,13 +371,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				568E91031B340647006A8F9B /* login_down.png in Resources */,
 				566C6F3C1B16F86100EDC546 /* Main.storyboard in Resources */,
 				569489081B177121002C8B3D /* notepad.png in Resources */,
 				56C0497E1B185F28008591B8 /* 5.png in Resources */,
 				56651F541B1FDF660011F62C /* search3.png in Resources */,
 				56C049691B181C2C008591B8 /* background.png in Resources */,
+				568E90FF1B340559006A8F9B /* welcome_bg.png in Resources */,
 				56C049811B185F28008591B8 /* 8.png in Resources */,
 				56C049861B185F28008591B8 /* 3.png in Resources */,
+				568E91071B341784006A8F9B /* password.png in Resources */,
 				569489091B177121002C8B3D /* phone.png in Resources */,
 				565B2AC31B2547C40017A862 /* search4.png in Resources */,
 				56C0497D1B185F28008591B8 /* 4.png in Resources */,
@@ -380,8 +393,10 @@
 				565B2AC51B25D24B0017A862 /* map.png in Resources */,
 				56C049801B185F28008591B8 /* 7.png in Resources */,
 				56C0497F1B185F28008591B8 /* 6.png in Resources */,
+				568E91021B340647006A8F9B /* login_up.png in Resources */,
 				56C049821B185F28008591B8 /* 9.png in Resources */,
 				566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */,
+				568E91061B341784006A8F9B /* user.png in Resources */,
 				566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +452,6 @@
 				562A40491B2ECD67001A3FA7 /* XHRadarPointView.m in Sources */,
 				56F124A41B30687C001B0E3F /* MainTabViewController.m in Sources */,
 				566C6F331B16F86100EDC546 /* AppDelegate.m in Sources */,
-				56BBA4901B32BD7900C6E919 /* JSONKit.m in Sources */,
 				562A404A1B2ECD67001A3FA7 /* XHRadarView.m in Sources */,
 				56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */,
 				56F124A31B30687C001B0E3F /* LoginViewController.m in Sources */,

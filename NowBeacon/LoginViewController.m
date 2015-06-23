@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "UserInfo.h"
 #import "AFHTTPRequestOperation.h"
-#import "JSONKit.h"
+
 
 @interface LoginViewController ()<CLLocationManagerDelegate>
 @property (strong, nonatomic)CLLocationManager *locationManager;
@@ -21,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    imageView.image = [UIImage imageNamed:@"welcome_bg.png"];
+    imageView.alpha = 1;
+    [self.view addSubview:imageView];
     
     // Do any additional setup after loading the view.
     if([CLLocationManager locationServicesEnabled]) {
@@ -71,7 +75,8 @@
     NSDictionary *parameters = @{@"username":_textUsername.text,@"password":_textPassword.text};
     //你的接口地址
     NSString *url=@"http://www.shinskytech.com/login_check.php";
-    
+    NSLog(@"username=%@", _textUsername.text);
+    NSLog(@"passowrd=%@", _textPassword.text);
     //发送请求
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -80,6 +85,7 @@
         if([res isEqual:@"1"]){
             MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
             [self presentModalViewController:viewController animated:YES];
+            [UserInfo setUserName:_textUsername.text];
         }else{
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                       @"错误" message:@"用户名或密码错误，请检查" delegate:self

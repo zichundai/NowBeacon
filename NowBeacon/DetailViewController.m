@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "XBeacon.h"
 #import "MBProgressHUD.h"
+#import "UserInfo.h"
 
 @interface DetailViewController ()<CBCentralManagerDelegate, CBPeripheralDelegate, CBPeripheralManagerDelegate, MBProgressHUDDelegate>{
     CBCentralManager      *centralManager;
@@ -202,6 +203,9 @@
     
 }
 - (IBAction)onSavePressed:(id)sender {
+    NSLog(@"username=%@", [UserInfo getUserName] );
+    NSLog(@"latitude=%f", [UserInfo getLatitude]);
+    NSLog(@"longitude=%f", [UserInfo getLongitude]);
     [self saveConnectedBeaconParam];
 }
 
