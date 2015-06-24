@@ -61,18 +61,33 @@
 
 }
 
+#pragma mark - 对话框
+-(void)showWarningAlert:(NSString *)errorMsg{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                              @"错误" message:errorMsg delegate:self
+                                             cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
+-(void)showInfoAlert:(NSString *)msg{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
+                              @"信息" message:msg delegate:self
+                                             cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+}
+
 #pragma mark - CentralManager委托实现
 - (void)scan
 {
     [centralManager scanForPeripheralsWithServices:nil
                                            options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
     
-    NSLog(@"Scanning started");
+    NSLog(@"ibeacon配置页面－－开始搜索");
 }
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    NSLog(@"Discovered %@ at %@", peripheral.name, RSSI);
+    NSLog(@"查找到ibeacon设备 %@ at %@", peripheral.name, RSSI);
     
     if ([peripheral.identifier.UUIDString isEqualToString:connectedPeripheral.identifier.UUIDString]){
         [centralManager stopScan];
@@ -88,7 +103,7 @@
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
-    //_lableInfo.text = @"断开连接！";
+    [self showWarningAlert:@"断开连接！"];
 }
 
 
@@ -100,7 +115,6 @@
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
     NSLog(@"central state=%ld", (long)central.state);
     if (central.state != CBCentralManagerStatePoweredOn) {
-        // In a real app, you'd deal with all the states correctly
         return;
     }
     
@@ -116,7 +130,6 @@
         return;
     }
     
-    // Loop through the newly filled peripheral.services array, just in case there's more than one.
     for (CBService *service in peripheral.services) {
         NSLog(@"Service found with UUID: %@", service.UUID);
         NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:@{SECTION_NAME:service.UUID.description}];
@@ -126,14 +139,13 @@
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error{
-    // Deal with errors (if any)
     if (error) {
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
         return;
     }
     
     [_connectedBeacon clear];
-    // Again, we loop through the array, just in case.
+    
     for (CBCharacteristic *characteristic in service.characteristics) {
         NSLog(@"characteristic=%@", characteristic.UUID.UUIDString );
         [peripheral readValueForCharacteristic:characteristic];
@@ -148,16 +160,12 @@
     
     NSString *stringFromData = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
     
-    // Have we got everything we need?
     if ([stringFromData isEqualToString:@"EOM"]) {
-        // Cancel our subscription to the characteristic
         [peripheral setNotifyValue:NO forCharacteristic:characteristic];
         
-        // and disconnect from the peripehral
         [centralManager cancelPeripheralConnection:peripheral];
     }
     
-    // Otherwise, just add the data on to what we already have
     for (NSMutableDictionary *dic in self.arrayServices) {
         NSString *service = [dic valueForKey:SECTION_NAME];
         if([service isEqual:characteristic.service.UUID]){
@@ -170,7 +178,7 @@
         _charUUID = characteristic;
         _textUUID.text = [strHexCharacteristic uppercaseString];
         NSLog(@"FFF1 Received string: %@", strHexCharacteristic);
-        _textEquipment.enabled = NO;
+        //_textEquipment.enabled = NO;
         _textEquipment.text = peripheral.name;
     }
     else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF2"]){
@@ -224,9 +232,6 @@
         self.strSwVer = [NSString stringWithCString:bsw encoding:NSASCIIStringEncoding];
         NSLog(@"2A28 sw ver : %@", self.strSwVer);
     }
-    
-    // Log it
-    //NSLog(@"Received: %@", stringFromData);
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
@@ -238,15 +243,10 @@
     
 }
 
-- (void)myTask {
-    // Do something usefull in here instead of sleeping ...
-    //sleep(3);
-    [self scan];
-}
-
 - (void)hudWasHidden:(MBProgressHUD *)hud{
     
 }
+
 - (IBAction)onSavePressed:(id)sender {
     NSLog(@"username=%@", [UserInfo getUserName] );
     NSLog(@"latitude=%f", [UserInfo getLatitude]);
@@ -269,19 +269,6 @@
     
 }
 
--(void)showWarningAlert:(NSString *)errorMsg{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                              @"错误" message:errorMsg delegate:self
-                                             cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alertView show];
-}
-
--(void)showInfoAlert:(NSString *)msg{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
-                              @"信息" message:msg delegate:self
-                                             cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alertView show];
-}
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error{
     if (error){
@@ -309,24 +296,33 @@
         }
         Byte cbyte[] = {iInterval};
         NSData *writeInterval = [[NSData alloc]initWithBytes:cbyte length:1];
+        NSLog(@"写入interval=%d", iInterval);
         [connectedPeripheral writeValue:(NSData *)writeInterval forCharacteristic:_charInterval type:CBCharacteristicWriteWithResponse];
     }else if(characteristic.UUID == _charInterval.UUID){
         NSLog(@"写入interval成功");
-        [self showInfoAlert:@"写入参数成功！"];
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        //申明返回的结果是json类型
-        manager.responseSerializer = [AFJSONResponseSerializer serializer];
-        //申明请求的数据是json类型
-        manager.requestSerializer=[AFJSONRequestSerializer serializer];
         
-        //如果报接受类型不一致请替换一致text/html或别的
+        int iPower = 0;
+        if (_segPower.selectedSegmentIndex == 0) {
+            iPower = 0x08;
+        }else if (_segPower.selectedSegmentIndex == 1) {
+            iPower = 0x09;
+        }else if (_segPower.selectedSegmentIndex == 2) {
+            iPower = 0x0a;
+        }else{
+            iPower = 0x0b;
+        }
+        Byte cbyte[] = {iPower};
+        NSData *writeTxPower = [[NSData alloc]initWithBytes:cbyte length:1];
+        [connectedPeripheral writeValue:(NSData *)writeTxPower forCharacteristic:_charTxPower type:CBCharacteristicWriteWithResponse];
+    }else if(characteristic.UUID == _charTxPower.UUID){
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        manager.requestSerializer=[AFJSONRequestSerializer serializer];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-        //传入的参数
+        
         NSDictionary *parameters = @{@"username":[UserInfo getUserName],@"latitude":[NSNumber numberWithDouble:[UserInfo getLatitude]], @"longitude":[NSNumber numberWithDouble:[UserInfo getLongitude]], @"uuid": _textUUID.text, @"major":_textMajor.text, @"minor":_textMinor.text, @"mac":self.strMac, @"interval":[self getIntervalString:_segInterval.selectedSegmentIndex], @"power":[self getPowerString:_segPower.selectedSegmentIndex], @"localname":_textEquipment.text, @"sw_ver":self.strSwVer, @"hw_ver":self.strHwVer};
         NSLog(@"strSwVer,length=%lu", (unsigned long)[self.strSwVer length]);
-        //你的接口地址
         NSString *url=@"http://www.shinskytech.com/add_ibeacon.php";
-        //发送请求
         [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", responseObject);
             id res = [responseObject objectForKey:@"result"];
@@ -343,21 +339,8 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Error: %@", error);
         }];
-        //[self.navigationController popViewControllerAnimated:YES];
-        int iPower = 0;
-        if (_segPower.selectedSegmentIndex == 0) {
-            iPower = 0x08;
-        }else if (_segPower.selectedSegmentIndex == 1) {
-            iPower = 0x09;
-        }else if (_segPower.selectedSegmentIndex == 2) {
-            iPower = 0x0a;
-        }else{
-            iPower = 0x0b;
-        }
-        //Byte cbyte[] = {iPower};
-        //NSData *writeTxPower = [[NSData alloc]initWithBytes:cbyte length:1];
-        //[connectedPeripheral writeValue:(NSData *)writeTxPower forCharacteristic:_charTxPower type:CBCharacteristicWriteWithResponse];
-    }else if(characteristic.UUID == _charTxPower.UUID){
+        [self showInfoAlert:@"写入参数成功！"];
+        
         NSLog(@"写入tx power成功");
     }
 }
