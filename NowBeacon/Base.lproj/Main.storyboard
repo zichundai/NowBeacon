@@ -804,6 +804,26 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzK-yg-Ep3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="351" y="195" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0x00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJU-tw-E0u">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="351" y="261" width="42" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -857,6 +877,8 @@
                                 <exclude reference="luQ-nn-eaq"/>
                                 <exclude reference="Vkj-LY-8cV"/>
                                 <exclude reference="act-11-cK7"/>
+                                <exclude reference="nzK-yg-Ep3"/>
+                                <exclude reference="ZJU-tw-E0u"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ACy-xe-13A"/>
@@ -908,6 +930,8 @@
                                 <include reference="luQ-nn-eaq"/>
                                 <include reference="Vkj-LY-8cV"/>
                                 <include reference="act-11-cK7"/>
+                                <include reference="nzK-yg-Ep3"/>
+                                <include reference="ZJU-tw-E0u"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ACy-xe-13A"/>
@@ -955,6 +979,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Hw7-nE-mB2"/>
                     <connections>
+                        <outlet property="lblMajorHex" destination="nzK-yg-Ep3" id="kwT-Xx-0FS"/>
+                        <outlet property="lblMinorHex" destination="ZJU-tw-E0u" id="cQC-sB-Y8j"/>
                         <outlet property="segInterval" destination="luQ-nn-eaq" id="d2s-AS-1dW"/>
                         <outlet property="segPower" destination="Vkj-LY-8cV" id="CRC-S2-Bhp"/>
                         <outlet property="textEquipment" destination="nZy-sw-YXT" id="Qn9-qF-ouQ"/>

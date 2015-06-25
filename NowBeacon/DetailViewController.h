@@ -22,7 +22,9 @@
 @property (strong, nonatomic) IBOutlet TSValidatedTextField *textEquipment;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segInterval;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segPower;
+@property (strong, nonatomic) IBOutlet UILabel *lblMajorHex;
 
+@property (strong, nonatomic) IBOutlet UILabel *lblMinorHex;
 @property (strong, nonatomic) CBPeripheral *connectedPeripheral;
 @property (strong, nonatomic) CBCharacteristic *charUUID;
 @property (strong, nonatomic) CBCharacteristic *charMajorMinor;

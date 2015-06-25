@@ -55,7 +55,7 @@
     _textMajor.regexpPattern = @"^[a-fA-F0-9]{4}";
     _textMajor.regexpValidColor = [UIColor validColor];
     _textMajor.regexpInvalidColor = [UIColor invalidColor];
-    _textMinor.regexpPattern = @"^[a-fA-F0-9]{4}";
+    _textMinor.regexpPattern = @"^[a-fA-F0-9]{1,4}";
     _textMinor.regexpValidColor = [UIColor validColor];
     _textMinor.regexpInvalidColor = [UIColor invalidColor];
 
@@ -178,7 +178,7 @@
         _charUUID = characteristic;
         _textUUID.text = [strHexCharacteristic uppercaseString];
         NSLog(@"FFF1 Received string: %@", strHexCharacteristic);
-        //_textEquipment.enabled = NO;
+        _textEquipment.enabled = NO;
         _textEquipment.text = peripheral.name;
     }
     else if ([characteristic.UUID.UUIDString isEqualToString:@"FFF2"]){
@@ -251,6 +251,10 @@
     NSLog(@"username=%@", [UserInfo getUserName] );
     NSLog(@"latitude=%f", [UserInfo getLatitude]);
     NSLog(@"longitude=%f", [UserInfo getLongitude]);
+    if ([_textMajor.text length]!=32 || [_textMajor.text length]!=4 || [_textMinor.text length]!=4) {
+        [self showWarningAlert:@"请检查参数长度！"];
+        return;
+    }
     [self saveConnectedBeaconParam];
 }
 

@@ -38,6 +38,7 @@
     }
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,7 +62,12 @@
 
 - (IBAction)onLoginClick:(id)sender {
     if ([UserInfo getLatitude]==-1 || [UserInfo getLongitude]==-1) {
-        [self showWarningAlert:@"获取位置信息失败，请检查！"];
+        [self showWarningAlert:@"获取位置信息失败，请打开Wi-Fi！"];
+        return;
+    }
+    if ([_textUsername.text length]<1 || [_textPassword.text length]<1) {
+        [self showWarningAlert:@"用户名和密码均不能为空，请检查"];
+        return;
     }
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //申明返回的结果是json类型

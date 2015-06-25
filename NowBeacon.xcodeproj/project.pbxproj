@@ -35,6 +35,8 @@
 		569489081B177121002C8B3D /* notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489051B177121002C8B3D /* notepad.png */; };
 		569489091B177121002C8B3D /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489061B177121002C8B3D /* phone.png */; };
 		5694890A1B177121002C8B3D /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 569489071B177121002C8B3D /* microphone.png */; };
+		56B293C41B3A93C200769CD8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B293C21B3A93C200769CD8 /* Default.png */; };
+		56B293C51B3A93C200769CD8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B293C31B3A93C200769CD8 /* Default@2x.png */; };
 		56C049671B181AD4008591B8 /* ConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C049661B181AD4008591B8 /* ConfigTableViewController.m */; };
 		56C049691B181C2C008591B8 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C049681B181C2C008591B8 /* background.png */; };
 		56C0496E1B18530C008591B8 /* XBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0496A1B18530C008591B8 /* XBeacon.m */; };
@@ -107,6 +109,8 @@
 		569489051B177121002C8B3D /* notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notepad.png; path = NowBeacon/icons/notepad.png; sourceTree = "<group>"; };
 		569489061B177121002C8B3D /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phone.png; path = NowBeacon/icons/phone.png; sourceTree = "<group>"; };
 		569489071B177121002C8B3D /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microphone.png; path = NowBeacon/icons/microphone.png; sourceTree = "<group>"; };
+		56B293C21B3A93C200769CD8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = NowBeacon/icons/Default.png; sourceTree = "<group>"; };
+		56B293C31B3A93C200769CD8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "NowBeacon/icons/Default@2x.png"; sourceTree = "<group>"; };
 		56C049651B181AD4008591B8 /* ConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigTableViewController.h; sourceTree = "<group>"; };
 		56C049661B181AD4008591B8 /* ConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigTableViewController.m; sourceTree = "<group>"; };
 		56C049681B181C2C008591B8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = NowBeacon/icons/background.png; sourceTree = "<group>"; };
@@ -273,6 +277,8 @@
 		569488FE1B1770A7002C8B3D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				56B293C21B3A93C200769CD8 /* Default.png */,
+				56B293C31B3A93C200769CD8 /* Default@2x.png */,
 				568E91041B341784006A8F9B /* user.png */,
 				568E91051B341784006A8F9B /* password.png */,
 				568E91001B340647006A8F9B /* login_up.png */,
@@ -403,6 +409,7 @@
 				56C049861B185F28008591B8 /* 3.png in Resources */,
 				568E91071B341784006A8F9B /* password.png in Resources */,
 				569489091B177121002C8B3D /* phone.png in Resources */,
+				56B293C41B3A93C200769CD8 /* Default.png in Resources */,
 				565B2AC31B2547C40017A862 /* search4.png in Resources */,
 				56C0497D1B185F28008591B8 /* 4.png in Resources */,
 				56651F551B1FDF660011F62C /* search1.png in Resources */,
@@ -417,6 +424,7 @@
 				568E91021B340647006A8F9B /* login_up.png in Resources */,
 				56C049821B185F28008591B8 /* 9.png in Resources */,
 				566C6F411B16F86100EDC546 /* LaunchScreen.xib in Resources */,
+				56B293C51B3A93C200769CD8 /* Default@2x.png in Resources */,
 				568E91061B341784006A8F9B /* user.png in Resources */,
 				566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */,
 			);
@@ -612,6 +620,7 @@
 			baseConfigurationReference = 8D52CA6EE20DE792D945C90B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NowBeacon/Info.plist;
@@ -626,6 +635,7 @@
 			baseConfigurationReference = 820473F5E2F6398B21C75828 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NowBeacon/Info.plist;
