@@ -177,7 +177,7 @@
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.backgroundColor = [UIColor clearColor];
+       // cell.backgroundColor = [UIColor clearColor];
         BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
         cell.textLabel.text = beacon.discoveredPeripheral.name;
         cell.detailTextLabel.text = [NSString stringWithFormat:@"信号强度: %@ dbm", beacon.rssi];

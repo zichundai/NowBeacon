@@ -251,7 +251,7 @@
     NSLog(@"username=%@", [UserInfo getUserName] );
     NSLog(@"latitude=%f", [UserInfo getLatitude]);
     NSLog(@"longitude=%f", [UserInfo getLongitude]);
-    if ([_textMajor.text length]!=32 || [_textMajor.text length]!=4 || [_textMinor.text length]!=4) {
+    if ([_textUUID.text length]!=32 || [_textMajor.text length]!=4 || [_textMinor.text length]!=4) {
         [self showWarningAlert:@"请检查参数长度！"];
         return;
     }
