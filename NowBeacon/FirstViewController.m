@@ -72,11 +72,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png" ] ]];
     //[self.view setAlpha:1];
-    /*UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"background.png"];
-    imageView.alpha = 1;
-    [self.view addSubview:imageView];
-     */
+    //UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    //imageView.image = [UIImage imageNamed:@"background.png"];
+    //imageView.alpha = 1;
+    //[self.view addSubview:imageView];
+    
     
     XHRadarView *radarView = [[XHRadarView alloc] initWithFrame:self.view.bounds];
     radarView.frame = self.view.frame;
