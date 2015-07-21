@@ -197,9 +197,19 @@
     return pointView;
 }
 
+-(int)getRandomNumber:(int)from to:(int)to
+{
+    return (int)(from + (arc4random() % (to - from + 1)));
+}
+    
 - (CGPoint)radarView:(XHRadarView *)radarView positionForIndex:(NSUInteger)index {
-    NSArray *point = [self.pointsArray objectAtIndex:index];
-    return CGPointMake([point[0] floatValue], [point[1] floatValue]);
+    //daijian modify 20150720
+    //NSArray *point = [self.pointsArray objectAtIndex:index];
+    CGFloat x = [self getRandomNumber:0 to:360];
+    CGFloat y = [self getRandomNumber:80 to:150];
+    NSLog(@"Draw ibeacon point:x=%f, y=%f",x, y);
+    //return CGPointMake([point[0] floatValue], [point[1] floatValue]);
+    return CGPointMake(x, y);
 }
 
 #pragma mark - XHRadarViewDelegate
