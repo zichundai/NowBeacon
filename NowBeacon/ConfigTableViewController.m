@@ -198,14 +198,17 @@
 {
     // Don't keep the table selection.
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //Carvin modify 20150818
+    
     BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
-    if (![beacon.discoveredPeripheral.name  isEqual: BEACON_NAME]){
+    /*if (![beacon.discoveredPeripheral.name  isEqual: BEACON_NAME]){
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                   @"信息" message:@"仅支持对NowBeacon的参数配置" delegate:self
                                                  cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
         return;
     }
+     */
     CBPeripheral *disPeripheral = beacon.discoveredPeripheral;
     if(disPeripheral){
         NSLog(@"配置的Beacon的UUID是：%@", disPeripheral.identifier);
