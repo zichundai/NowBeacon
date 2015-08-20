@@ -11,6 +11,7 @@
 		562A40481B2ECD67001A3FA7 /* XHRadarIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40431B2ECD67001A3FA7 /* XHRadarIndicatorView.m */; };
 		562A40491B2ECD67001A3FA7 /* XHRadarPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */; };
 		562A404A1B2ECD67001A3FA7 /* XHRadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562A40471B2ECD67001A3FA7 /* XHRadarView.m */; };
+		5655BD401B8587910058CCF7 /* configPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5655BD3F1B8587910058CCF7 /* configPlist.plist */; };
 		565B2AC31B2547C40017A862 /* search4.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B2AC21B2547C40017A862 /* search4.png */; };
 		565B2AC51B25D24B0017A862 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 565B2AC41B25D24B0017A862 /* map.png */; };
 		56651F541B1FDF660011F62C /* search3.png in Resources */ = {isa = PBXBuildFile; fileRef = 56651F501B1FDF660011F62C /* search3.png */; };
@@ -75,6 +76,7 @@
 		562A40451B2ECD67001A3FA7 /* XHRadarPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRadarPointView.m; sourceTree = "<group>"; };
 		562A40461B2ECD67001A3FA7 /* XHRadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRadarView.h; sourceTree = "<group>"; };
 		562A40471B2ECD67001A3FA7 /* XHRadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRadarView.m; sourceTree = "<group>"; };
+		5655BD3F1B8587910058CCF7 /* configPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = configPlist.plist; sourceTree = "<group>"; };
 		565B2AC21B2547C40017A862 /* search4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search4.png; path = NowBeacon/icons/search4.png; sourceTree = "<group>"; };
 		565B2AC41B25D24B0017A862 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map.png; path = NowBeacon/icons/map.png; sourceTree = "<group>"; };
 		56651F501B1FDF660011F62C /* search3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search3.png; path = NowBeacon/icons/search3.png; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				566C6F3A1B16F86100EDC546 /* Main.storyboard */,
 				566C6F2E1B16F86100EDC546 /* Info.plist */,
 				566C6F2F1B16F86100EDC546 /* main.m */,
+				5655BD3F1B8587910058CCF7 /* configPlist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				56B293C51B3A93C200769CD8 /* Default@2x.png in Resources */,
 				568E91061B341784006A8F9B /* user.png in Resources */,
 				566C6F3E1B16F86100EDC546 /* Images.xcassets in Resources */,
+				5655BD401B8587910058CCF7 /* configPlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

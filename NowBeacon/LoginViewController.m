@@ -36,6 +36,18 @@
         [self.locationManager startUpdatingLocation];
         NSLog(@"开始定位");
     }
+    //读取保存的用户名
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"configPlist" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    BOOL isRemember = [data valueForKey:@"isRemember"];
+    [_switchRemember setOn:isRemember];
+    if (isRemember) {
+        NSString *user_name = [data valueForKey:@"default_name"];
+        NSString *password = [data valueForKey:@"default_password"];
+        NSLog(@"user=%@, password=%@", user_name, password);//直接打印数据。
+        [_textUsername setText:user_name];
+        [_textPassword setText:password];
+    }
 }
 
 
@@ -92,6 +104,18 @@
             MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
             [self presentModalViewController:viewController animated:YES];
             [UserInfo setUserName:_textUsername.text];
+            //保存用户名
+            NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"configPlist" ofType:@"plist"];
+            NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+            BOOL isSwitch  = [_switchRemember isOn];
+            [data setValue:[NSNumber numberWithBool:isSwitch] forKey:@"isRemember"];
+            if (isSwitch){
+                [data setValue:_textUsername.text forKey:@"default_name"];
+                [data setValue:_textPassword.text forKey:@"default_password"];
+            }else{
+                [data setValue:@"" forKey:@"default_name"];
+                [data setValue:@"" forKey:@"default_password"];
+            }
         }else{
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                       @"错误" message:@"用户名或密码错误，请检查" delegate:self
