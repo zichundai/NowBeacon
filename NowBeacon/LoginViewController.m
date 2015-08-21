@@ -37,9 +37,14 @@
         NSLog(@"开始定位");
     }
     //读取保存的用户名
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"configPlist" ofType:@"plist"];
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
-    BOOL isRemember = [data valueForKey:@"isRemember"];
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath = [paths objectAtIndex:0];
+    NSString *filename=[plistPath stringByAppendingPathComponent:@"myconfig.plist"];
+
+    NSMutableDictionary *data = [[[NSMutableDictionary alloc] initWithContentsOfFile:filename]mutableCopy];
+    NSLog(@"%@", data);
+    NSNumber *boolNum = [data valueForKey:@"isRemember"];
+    BOOL isRemember = [boolNum boolValue];
     [_switchRemember setOn:isRemember];
     if (isRemember) {
         NSString *user_name = [data valueForKey:@"default_name"];
@@ -105,8 +110,10 @@
             [self presentModalViewController:viewController animated:YES];
             [UserInfo setUserName:_textUsername.text];
             //保存用户名
-            NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"configPlist" ofType:@"plist"];
-            NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+            NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+            NSString *plistPath1 = [paths objectAtIndex:0];
+            NSString *filename=[plistPath1 stringByAppendingPathComponent:@"myconfig.plist"];
+             NSMutableDictionary *data =  [[[NSMutableDictionary alloc] initWithContentsOfFile:filename]mutableCopy];
             BOOL isSwitch  = [_switchRemember isOn];
             [data setValue:[NSNumber numberWithBool:isSwitch] forKey:@"isRemember"];
             if (isSwitch){
@@ -116,6 +123,10 @@
                 [data setValue:@"" forKey:@"default_name"];
                 [data setValue:@"" forKey:@"default_password"];
             }
+            BOOL res = [data writeToFile:filename atomically:YES];
+            NSLog(@"write file =%d", res);
+            NSMutableDictionary *data1 = [[NSMutableDictionary alloc] initWithContentsOfFile:filename];
+            NSLog(@"%@", data1);
         }else{
             UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
                                       @"错误" message:@"用户名或密码错误，请检查" delegate:self
