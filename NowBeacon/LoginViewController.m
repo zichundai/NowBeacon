@@ -107,7 +107,8 @@
         NSLog(@"result=%@",res);
         if([res isEqual:@"1"]){
             MainTabViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"maintab"];
-            [self presentModalViewController:viewController animated:YES];
+            [self presentViewController:viewController animated:YES
+                             completion:^(void){}];
             [UserInfo setUserName:_textUsername.text];
             //保存用户名
             NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
@@ -138,6 +139,7 @@
         NSLog(@"Error: %@", error);
     }];
 }
+
 #pragma mark - CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     // 获取经纬度
