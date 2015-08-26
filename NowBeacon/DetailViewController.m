@@ -76,11 +76,24 @@
     [alertView show];
 }
 
+#pragma mark - Central Methods
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
+    NSLog(@"central state=%ld", (long)central.state);
+    if (central.state != CBCentralManagerStatePoweredOn) {
+        return;
+    }
+    
+    if(self.connectedPeripheral){
+        [self scan];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+}
+
 #pragma mark - CentralManager委托实现
 - (void)scan
 {
     [centralManager scanForPeripheralsWithServices:nil
-                                           options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
+                                           options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @NO }];
     
     NSLog(@"ibeacon配置页面－－开始搜索");
 }
@@ -96,7 +109,9 @@
     }
 }
 
+
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
+    NSLog(@"连接上");
     [self.arrayServices removeAllObjects];
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
@@ -104,6 +119,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
     [self showWarningAlert:@"断开连接！"];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 
@@ -111,18 +127,6 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
-#pragma mark - Central Methods
-- (void)centralManagerDidUpdateState:(CBCentralManager *)central{
-    NSLog(@"central state=%ld", (long)central.state);
-    if (central.state != CBCentralManagerStatePoweredOn) {
-        return;
-    }
-    
-    if(self.connectedPeripheral){
-        [self scan];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    }
-}
 #pragma mark - Perpheral委托实现
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error{
     if (error) {

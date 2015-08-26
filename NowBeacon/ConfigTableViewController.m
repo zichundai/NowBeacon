@@ -164,14 +164,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    /*
-    BOOL nibsRegistered = NO;
-    if (!nibsRegistered) {
-        UINib *nib = [UINib nibWithNibName:@"BeaconTableViewCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
-        nibsRegistered = YES;
-    }
-    */
+
     UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell ==nil)
     {
@@ -185,7 +178,6 @@
         cell.imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:index]];
     }
 
-    
     return cell;
 }
 
@@ -196,10 +188,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Don't keep the table selection.
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //Carvin modify 20150818
-    
     BLEInfo *beacon = [self.arrayBLE objectAtIndex:indexPath.row];
     /*if (![beacon.discoveredPeripheral.name  isEqual: BEACON_NAME]){
         UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:
